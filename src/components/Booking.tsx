@@ -49,10 +49,10 @@ const Booking = ({ lang, onClose }: BookingProps) => {
                             {lang === 'sr' ? 'telefon' : 'phone'}
                         </p>
                         <a 
-                            href="tel:+381211234567" 
+                            href="tel:+38162572222" 
                             className="text-xl font-medium text-gray-900 hover:text-[#c9a227] transition-colors"
                         >
-                            +381 21 123 4567
+                            +381 62 572 222
                         </a>
                     </div>
 
@@ -60,10 +60,10 @@ const Booking = ({ lang, onClose }: BookingProps) => {
                     <div className="bg-white rounded-2xl p-6 hover:-translate-y-0.5 transition-transform">
                         <p className="text-[10px] tracking-[0.15em] text-gray-400 mb-2">email</p>
                         <a 
-                            href="mailto:info@blink.rs" 
+                            href="mailto:drmemicenisa@gmail.com" 
                             className="text-xl font-medium text-gray-900 hover:text-[#c9a227] transition-colors"
                         >
-                            info@blink.rs
+                            drmemicenisa@gmail.com
                         </a>
                     </div>
 
@@ -74,12 +74,12 @@ const Booking = ({ lang, onClose }: BookingProps) => {
                                 {lang === 'sr' ? 'adresa' : 'address'}
                             </p>
                             <a 
-                                href="https://maps.google.com/?q=Bulevar+Mihajla+Pupina+10+Beograd" 
+                                href="https://maps.google.com/?q=Lug+32+Novi+Pazar" 
                                 target="_blank" 
                                 rel="noopener noreferrer"
                                 className="text-lg sm:text-xl font-medium text-gray-900 hover:text-[#c9a227] transition-colors"
                             >
-                                Bulevar Mihajla Pupina 10, {lang === 'sr' ? 'Beograd' : 'Belgrade'}
+                                Lug 32, Novi Pazar
                             </a>
                         </div>
                         <div className="flex flex-col sm:flex-row gap-3 sm:gap-6 pt-2 border-t border-gray-100">

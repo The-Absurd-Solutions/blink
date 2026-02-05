@@ -12,18 +12,16 @@ interface HeroProps {
     setLang: (l: 'sr' | 'en') => void;
     lensEnabled: boolean;
     setLensEnabled: (enabled: boolean) => void;
-    showBooking?: boolean;
-    setShowBooking?: (show: boolean) => void;
 }
 
-const Hero = ({ lang, setLang, lensEnabled, setLensEnabled, showBooking, setShowBooking }: HeroProps) => {
+const Hero = ({ lang, setLang, lensEnabled, setLensEnabled }: HeroProps) => {
     const t = translations[lang].hero;
 
     return (
         <header className="relative w-full min-h-[85vh] flex flex-col overflow-hidden bg-gray-50" role="banner">
             <MouseGlow isEnabled={lensEnabled} lang={lang} />
             <FloatingBlobs />
-            <Navbar lang={lang} setLang={setLang} lensEnabled={lensEnabled} setLensEnabled={setLensEnabled} showBooking={showBooking} setShowBooking={setShowBooking} />
+            <Navbar lang={lang} setLang={setLang} lensEnabled={lensEnabled} setLensEnabled={setLensEnabled} />
 
             <main id="main-content" className="flex-grow flex flex-col relative w-full max-w-[1600px] mx-auto px-4 md:px-8 pt-6 pb-8 justify-center">
 

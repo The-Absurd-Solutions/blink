@@ -49,7 +49,7 @@ const Terms = ({ lang, onClose }: TermsProps) => {
                 },
                 {
                     title: 'Kontakt',
-                    content: 'Za dodatna pitanja, kontaktirajte nas na +381 21 123 4567 ili nas posetite na adresi Bulevar Mihajla Pupina 10, Beograd.',
+                    content: 'Za dodatna pitanja, kontaktirajte nas na +381 62 572 222 ili nas posetite na adresi Lug 32, Novi Pazar.',
                     items: []
                 }
             ]
@@ -96,7 +96,7 @@ const Terms = ({ lang, onClose }: TermsProps) => {
                 },
                 {
                     title: 'Contact',
-                    content: 'For additional questions, contact us at +381 21 123 4567 or visit us at Bulevar Mihajla Pupina 10, Belgrade.',
+                    content: 'For additional questions, contact us at +381 62 572 222 or visit us at Lug 32, Novi Pazar.',
                     items: []
                 }
             ]

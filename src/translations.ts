@@ -83,12 +83,12 @@ export const translations = {
             ctaButton: "zakažite pregled",
             navigation: "Navigacija",
             contact: "Kontakt",
-            address: "Bulevar Mihajla Pupina 10, Beograd",
-            phone: "+381 21 123 4567",
+            address: "Lug 32, Novi Pazar",
+            phone: "+381 62 572 222",
             hours: "Pon - Pet: 08:00 - 20:00",
             tagline: "Oftalmološka ordinacija posvećena očuvanju i unapređenju vašeg vida.",
             copyright: "© 2026 Blink Oftalmološka ordinacija. Sva prava zadržana.",
-            location: "Beograd, Srbija",
+            location: "Novi Pazar, Srbija",
             privacy: "politika privatnosti",
             terms: "uslovi korišćenja"
         }
@@ -177,12 +177,12 @@ export const translations = {
             ctaButton: "book appointment",
             navigation: "Navigation",
             contact: "Contact",
-            address: "Bulevar Mihajla Pupina 10, Belgrade",
-            phone: "+381 21 123 4567",
+            address: "Lug 32, Novi Pazar",
+            phone: "+381 62 572 222",
             hours: "Mon - Fri: 08:00 - 20:00",
             tagline: "Eye clinic dedicated to preserving and enhancing your vision.",
             copyright: "© 2026 Blink Eye Clinic. All rights reserved.",
-            location: "Belgrade, Serbia",
+            location: "Novi Pazar, Serbia",
             privacy: "privacy policy",
             terms: "terms of service"
         }

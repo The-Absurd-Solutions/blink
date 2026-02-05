@@ -49,7 +49,7 @@ const Privacy = ({ lang, onClose }: PrivacyProps) => {
                 },
                 {
                     title: 'Kontakt',
-                    content: 'Za sva pitanja u vezi sa vašim podacima, kontaktirajte nas na telefon +381 21 123 4567 ili nas posetite na adresi Bulevar Mihajla Pupina 10, Beograd.',
+                    content: 'Za sva pitanja u vezi sa vašim podacima, kontaktirajte nas na telefon +381 62 572 222 ili nas posetite na adresi Lug 32, Novi Pazar.',
                     items: []
                 }
             ]
@@ -96,7 +96,7 @@ const Privacy = ({ lang, onClose }: PrivacyProps) => {
                 },
                 {
                     title: 'Contact',
-                    content: 'For any questions regarding your data, contact us at +381 21 123 4567 or visit us at Bulevar Mihajla Pupina 10, Belgrade.',
+                    content: 'For any questions regarding your data, contact us at +381 62 572 222 or visit us at Lug 32, Novi Pazar.',
                     items: []
                 }
             ]

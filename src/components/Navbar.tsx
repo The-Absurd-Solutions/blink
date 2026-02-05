@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { ArrowRight, X, Eye, EyeOff } from 'lucide-react';
+import { X, Eye, EyeOff } from 'lucide-react';
 import { translations } from '../translations';
 
 interface NavbarProps {
@@ -7,11 +7,9 @@ interface NavbarProps {
     setLang: (l: 'sr' | 'en') => void;
     lensEnabled: boolean;
     setLensEnabled: (enabled: boolean) => void;
-    showBooking?: boolean;
-    setShowBooking?: (show: boolean) => void;
 }
 
-const Navbar = ({ lang, setLang, lensEnabled, setLensEnabled, showBooking, setShowBooking }: NavbarProps) => {
+const Navbar = ({ lang, setLang, lensEnabled, setLensEnabled }: NavbarProps) => {
     const t = translations[lang].nav;
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -51,13 +49,14 @@ const Navbar = ({ lang, setLang, lensEnabled, setLensEnabled, showBooking, setSh
                     <button
                         onClick={() => setLensEnabled(!lensEnabled)}
                         className={`flex items-center gap-1.5 text-xs tracking-wider transition-all duration-300 ${lensEnabled
-                                ? 'text-[#c9a227] hover:text-[#b08d1f]'
-                                : 'text-gray-400 hover:text-gray-600'
+                            ? 'text-gray-400 hover:text-gray-600'
+                            : 'text-[#c9a227] hover:text-[#b08d1f]'
                             }`}
                         aria-label={lensEnabled ? 'Isključi efekat lupe' : 'Uključi efekat lupe'}
                     >
                         {lensEnabled ? <EyeOff size={13} strokeWidth={1.5} /> : <Eye size={13} strokeWidth={1.5} />}
-                        <span className="font-light">{lang === 'sr' ? 'progledaj' : 'clear view'}</span>
+                        <span className="font-medium">{lensEnabled ? '+2.00' : '0.00'}</span>
+                        <span className="font-light text-[10px] uppercase">dpt</span>
                     </button>
                 </div>
 
@@ -74,15 +73,6 @@ const Navbar = ({ lang, setLang, lensEnabled, setLensEnabled, showBooking, setSh
                         <div className="w-6 h-0.5 bg-black"></div>
                         <div className="w-6 h-0.5 bg-black"></div>
                     </div>
-                </button>
-
-                {/* CTA Button - Desktop only */}
-                <button
-                    onClick={() => setShowBooking?.(!showBooking)}
-                    className="hidden md:flex bg-[#ffce53] text-black px-6 py-3 rounded-full text-sm font-medium items-center gap-2 hover:bg-[#ffd970] transition-all duration-300"
-                    aria-label={lang === 'sr' ? 'Zakažite pregled' : 'Book appointment'}
-                >
-                    {showBooking ? (lang === 'sr' ? '← nazad' : '← back') : t.cta} {!showBooking && <ArrowRight size={16} aria-hidden="true" />}
                 </button>
             </nav>
 
@@ -131,15 +121,6 @@ const Navbar = ({ lang, setLang, lensEnabled, setLensEnabled, showBooking, setSh
                             en
                         </button>
                     </div>
-
-                    {/* CTA Button */}
-                    <button
-                        className="mt-auto bg-[#ffce53] text-black px-6 py-4 rounded-full text-sm font-medium flex items-center justify-center gap-2 hover:bg-[#ffd970] transition-all duration-300"
-                        onClick={() => { setMobileMenuOpen(false); setShowBooking?.(!showBooking); }}
-                        aria-label={lang === 'sr' ? 'Zakažite pregled' : 'Book appointment'}
-                    >
-                        {showBooking ? (lang === 'sr' ? '← nazad' : '← back') : t.cta} {!showBooking && <ArrowRight size={16} aria-hidden="true" />}
-                    </button>
                 </div>
             </div>
         </>

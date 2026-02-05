@@ -1,14 +1,11 @@
-import { Instagram, Facebook } from 'lucide-react';
+import { Instagram, Facebook, Phone, Mail, Clock } from 'lucide-react';
 import { translations } from '../translations';
-
-type PageView = 'home' | 'booking' | 'privacy' | 'terms';
 
 interface FooterProps {
     lang: 'sr' | 'en';
-    setCurrentPage: (page: PageView) => void;
 }
 
-const Footer = ({ lang, setCurrentPage }: FooterProps) => {
+const Footer = ({ lang }: FooterProps) => {
     const t = translations[lang].footer;
     const nav = translations[lang].nav;
 
@@ -30,49 +27,70 @@ const Footer = ({ lang, setCurrentPage }: FooterProps) => {
                             {t.ctaTitle}<span className="inline-block w-3 h-3 rounded-full bg-[#ffce53] ml-2 align-top"></span>
                         </h2>
                     </div>
-                    
-                    {/* Contact Cards */}
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+
+                    {/* Contact Row */}
+                    <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8 max-w-5xl mx-auto">
                         {/* Phone */}
-                        <a 
-                            href="tel:+381211234567" 
-                            className="group bg-white rounded-2xl p-8 text-center hover:bg-black transition-all duration-300"
+                        <a
+                            href="tel:+38162572222"
+                            className="group flex items-center gap-4 bg-white rounded-2xl px-8 py-5 hover:bg-gray-50 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 w-full md:w-auto"
                         >
-                            <p className="text-[11px] tracking-[0.2em] text-gray-400 group-hover:text-gray-500 mb-3 transition-colors">
-                                {lang === 'sr' ? 'telefon' : 'phone'}
-                            </p>
-                            <p className="text-2xl md:text-3xl font-semibold text-black group-hover:text-white transition-colors">
-                                +381 21 123 4567
-                            </p>
+                            <div className="w-12 h-12 rounded-full bg-gray-100 group-hover:bg-[#ffce53]/20 flex items-center justify-center transition-colors">
+                                <Phone size={20} className="text-[#c9a227]" />
+                            </div>
+                            <div>
+                                <p className="text-[10px] tracking-[0.2em] text-gray-400 uppercase">
+                                    {lang === 'sr' ? 'telefon' : 'phone'}
+                                </p>
+                                <p className="text-lg font-medium text-gray-700 group-hover:text-black transition-colors">
+                                    +381 62 572 222
+                                </p>
+                            </div>
                         </a>
-                        
+
+                        {/* Divider */}
+                        <div className="hidden md:block w-px h-12 bg-gray-200"></div>
+
                         {/* Email */}
-                        <a 
-                            href="mailto:info@blink.rs" 
-                            className="group bg-white rounded-2xl p-8 text-center hover:bg-black transition-all duration-300"
+                        <a
+                            href="mailto:drmemicenisa@gmail.com"
+                            className="group flex items-center gap-4 bg-white rounded-2xl px-8 py-5 hover:bg-gray-50 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 w-full md:w-auto"
                         >
-                            <p className="text-[11px] tracking-[0.2em] text-gray-400 group-hover:text-gray-500 mb-3 transition-colors">
-                                email
-                            </p>
-                            <p className="text-2xl md:text-3xl font-semibold text-black group-hover:text-white transition-colors">
-                                info@blink.rs
-                            </p>
+                            <div className="w-12 h-12 rounded-full bg-gray-100 group-hover:bg-[#ffce53]/20 flex items-center justify-center transition-colors">
+                                <Mail size={20} className="text-[#c9a227]" />
+                            </div>
+                            <div>
+                                <p className="text-[10px] tracking-[0.2em] text-gray-400 uppercase">
+                                    email
+                                </p>
+                                <p className="text-lg font-medium text-gray-700 group-hover:text-black transition-colors">
+                                    drmemicenisa@gmail.com
+                                </p>
+                            </div>
                         </a>
-                        
+
+                        {/* Divider */}
+                        <div className="hidden md:block w-px h-12 bg-gray-200"></div>
+
                         {/* Hours */}
-                        <div className="bg-white rounded-2xl p-8 text-center">
-                            <p className="text-[11px] tracking-[0.2em] text-gray-400 mb-3">
-                                {lang === 'sr' ? 'radno vrijeme' : 'hours'}
-                            </p>
-                            <div className="space-y-1">
-                                <p className="text-xl md:text-2xl font-semibold text-black">
-                                    <span className="text-gray-400 text-base font-normal mr-2">{lang === 'sr' ? 'pon–pet' : 'mon–fri'}</span>
-                                    08–20h
+                        <div className="flex items-center gap-4 bg-white rounded-2xl px-8 py-5 w-full md:w-auto">
+                            <div className="w-12 h-12 rounded-full bg-gray-100 flex items-center justify-center shrink-0">
+                                <Clock size={20} className="text-[#c9a227]" />
+                            </div>
+                            <div>
+                                <p className="text-[10px] tracking-[0.2em] text-gray-400 uppercase mb-2">
+                                    {lang === 'sr' ? 'radno vrijeme' : 'hours'}
                                 </p>
-                                <p className="text-xl md:text-2xl font-semibold text-black">
-                                    <span className="text-gray-400 text-base font-normal mr-2">{lang === 'sr' ? 'sub' : 'sat'}</span>
-                                    09–14h
-                                </p>
+                                <div className="space-y-1">
+                                    <div className="flex items-center gap-3 text-sm">
+                                        <span className="text-gray-400 w-16">{lang === 'sr' ? 'pon–pet' : 'mon–fri'}</span>
+                                        <span className="font-medium text-gray-700">08–20h</span>
+                                    </div>
+                                    <div className="flex items-center gap-3 text-sm">
+                                        <span className="text-gray-400 w-16">{lang === 'sr' ? 'sub' : 'sat'}</span>
+                                        <span className="font-medium text-gray-700">09–14h</span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -171,8 +189,8 @@ const Footer = ({ lang, setCurrentPage }: FooterProps) => {
                     <div className="pt-8 border-t border-gray-200 flex flex-col md:flex-row justify-between items-center gap-4">
                         <span className="text-gray-400 text-xs tracking-wide">{t.copyright}</span>
                         <div className="flex items-center gap-6 text-gray-400 text-xs">
-                            <button onClick={() => setCurrentPage('privacy')} className="hover:text-gray-600 transition-colors">{t.privacy}</button>
-                            <button onClick={() => setCurrentPage('terms')} className="hover:text-gray-600 transition-colors">{t.terms}</button>
+                            <a href="/privacy.html" className="hover:text-gray-600 transition-colors">{t.privacy}</a>
+                            <a href="/terms.html" className="hover:text-gray-600 transition-colors">{t.terms}</a>
                             <div className="flex items-center gap-2">
                                 <span className="w-1 h-1 rounded-full bg-[#ffce53]"></span>
                                 <span>{t.location}</span>
