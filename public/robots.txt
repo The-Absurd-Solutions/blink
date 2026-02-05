@@ -1,0 +1,59 @@
+# Blink Eye Clinic - robots.txt
+# https://blink.rs
+# Last updated: 2026-02-05
+
+User-agent: *
+Allow: /
+
+# Sitemap locations
+Sitemap: https://blink.rs/sitemap.xml
+
+# Disallow admin, API, and build routes
+Disallow: /api/
+Disallow: /_*
+Disallow: /admin/
+Disallow: /*.json$
+Disallow: /assets/*.js$
+Disallow: /assets/*.css$
+
+# Allow important resources for rendering
+Allow: /favicon.svg
+Allow: /hero.png
+Allow: /tehnologija.jpg
+Allow: /*.html$
+
+# Google specific
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+# Googlebot Image - allow all images
+User-agent: Googlebot-Image
+Allow: /
+Disallow:
+
+# Bing
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+# Yandex (Serbia has some Russian-speaking visitors)
+User-agent: Yandex
+Allow: /
+Crawl-delay: 2
+
+# Block AI training bots (optional - remove if you want AI indexing)
+User-agent: GPTBot
+Disallow: /
+
+User-agent: ChatGPT-User
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: anthropic-ai
+Disallow: /
+
+# Host directive
+Host: https://blink.rs

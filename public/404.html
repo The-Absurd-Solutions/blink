@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="sr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>404 - Stranica nije pronađena | Blink Oftalmološka ordinacija</title>
+    <meta name="description"
+        content="Stranica koju tražite nije pronađena. Vratite se na početnu stranicu Blink oftalmološke ordinacije." />
+    <meta name="robots" content="noindex, nofollow" />
+    <link rel="canonical" href="https://blink.rs/" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+
+    <!-- Open Graph for sharing -->
+    <meta property="og:title" content="404 - Stranica nije pronađena | Blink" />
+    <meta property="og:description" content="Stranica koju tražite nije pronađena. Vratite se na početnu stranicu." />
+    <meta property="og:url" content="https://blink.rs/" />
+    <meta property="og:type" content="website" />
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        .container {
+            text-align: center;
+            max-width: 500px;
+        }
+
+        .error-code {
+            font-size: 8rem;
+            font-weight: 900;
+            color: #000;
+            line-height: 1;
+            margin-bottom: 1rem;
+        }
+
+        .error-code span {
+            color: #ffce53;
+        }
+
+        h1 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #000;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            color: #666;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: #000;
+            color: #fff;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+
+        .btn:hover {
+            background: #ffce53;
+            color: #000;
+        }
+
+        .links {
+            margin-top: 2rem;
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .links a {
+            color: #666;
+            text-decoration: none;
+            font-size: 0.875rem;
+            transition: color 0.3s;
+        }
+
+        .links a:hover {
+            color: #000;
+        }
+    </style>
+
+    <script>
+        // Detect language preference and update content
+        document.addEventListener('DOMContentLoaded', function () {
+            const urlParams = new URLSearchParams(window.location.search);
+            const isEnglish = urlParams.get('lang') === 'en' ||
+                navigator.language.startsWith('en') ||
+                document.referrer.includes('lang=en');
+
+            if (isEnglish) {
+                document.documentElement.lang = 'en';
+                document.title = '404 - Page Not Found | Blink Eye Clinic';
+                document.querySelector('h1').textContent = 'Page not found';
+                document.querySelector('p').textContent = 'Sorry, the page you are looking for does not exist or has been moved. Check the URL or return to the homepage.';
+                document.querySelector('.btn').innerHTML = '← Back to homepage';
+                document.querySelectorAll('.links a')[0].textContent = 'Services';
+                document.querySelectorAll('.links a')[1].textContent = 'Technology';
+                document.querySelectorAll('.links a')[3].textContent = 'Contact';
+            }
+        });
+    </script>
+</head>
+
+<body>
+    <main class="container" role="main">
+        <div class="error-code" aria-label="Error 404">4<span>0</span>4</div>
+        <h1>Stranica nije pronađena</h1>
+        <p>Žao nam je, stranica koju tražite ne postoji ili je premještena. Provjerite URL adresu ili se vratite na
+            početnu stranicu.</p>
+        <a href="/" class="btn" aria-label="Nazad na početnu stranicu">
+            ← Nazad na početnu
+        </a>
+        <nav class="links" aria-label="Korisni linkovi">
+            <a href="/#services">Usluge</a>
+            <a href="/#technology">Tehnologija</a>
+            <a href="/#faq">FAQ</a>
+            <a href="/#contact">Kontakt</a>
+        </nav>
+    </main>
+</body>
+
+</html>

@@ -1,0 +1,194 @@
+@import "tailwindcss";
+
+/* Base styles */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Outfit', sans-serif;
+  background-color: #f3f4f6;
+}
+
+/* Skip to content link for accessibility */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: #000;
+  color: white;
+  padding: 8px 16px;
+  z-index: 1000;
+  transition: top 0.3s;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+/* Giant title for hero */
+.text-giant {
+  font-size: clamp(6rem, 20vw, 18rem);
+  line-height: 0.8;
+}
+
+/* Custom handwriting font */
+.font-handwriting {
+  font-family: 'Nanum Pen Script', cursive;
+}
+
+/* Navigation link styling */
+.nav-link {
+  position: relative;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background-color: #ffce53;
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* Eye-Follow dot pulse animation */
+@keyframes pulse-glow {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(255, 206, 83, 0.4);
+  }
+  50% {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px 5px rgba(255, 206, 83, 0.3);
+  }
+}
+
+.eye-dot {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* Floating blobs animation */
+@keyframes float-1 {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(30px, -30px) scale(1.05);
+  }
+  66% {
+    transform: translate(-20px, 20px) scale(0.95);
+  }
+}
+
+@keyframes float-2 {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(-25px, 25px) scale(0.95);
+  }
+  66% {
+    transform: translate(35px, -20px) scale(1.05);
+  }
+}
+
+.blob-1 {
+  animation: float-1 15s ease-in-out infinite;
+}
+
+.blob-2 {
+  animation: float-2 18s ease-in-out infinite;
+}
+
+/* ===== CLS Prevention ===== */
+/* Reserve space for images to prevent layout shift */
+img {
+  height: auto;
+  max-width: 100%;
+}
+
+/* Hero image placeholder - prevents CLS */
+.hero-image-wrapper {
+  aspect-ratio: 3 / 4;
+  background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
+}
+
+/* Technology image placeholder */
+.tech-image-wrapper {
+  aspect-ratio: 4 / 3;
+  background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
+}
+
+/* Font fallback to prevent FOIT/FOUT */
+body {
+  font-display: swap;
+}
+
+/* Reserve space for navigation */
+nav {
+  min-height: 72px;
+}
+
+/* Contain layout for sections */
+section {
+  contain: layout style;
+}
+
+/* ===== Accessibility Improvements ===== */
+/* Screen reader only utility */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Focus visible for keyboard navigation */
+:focus-visible {
+  outline: 2px solid #ffce53;
+  outline-offset: 2px;
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  
+  .blob-1,
+  .blob-2 {
+    animation: none;
+  }
+  
+  .eye-dot {
+    animation: none;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .nav-link::after {
+    background-color: currentColor;
+  }
+  
+  button, a {
+    border: 2px solid currentColor;
+  }
+}
