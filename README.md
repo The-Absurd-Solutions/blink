@@ -1,15 +1,16 @@
-# Blink - Oftalmološka ordinacija
+# Blink - Eye Clinic
 
-Modern landing page za oftalmološku ordinaciju.
+Modern landing page for an ophthalmology clinic.
 
 ## ✨ Features
 
 - ⚡ React 19 + TypeScript + Vite
 - 🎨 Tailwind CSS v4
-- 🌍 Dvojezična podrška (SR/EN)
-- 📱 Fully responsive dizajn
-- ♿ Pristupačnost (a11y)
-- 🔍 SEO optimizacija
+- 🌍 Bilingual support (SR/EN)
+- 📱 Fully responsive design
+- ♿ Accessibility (a11y)
+- 🔍 SEO optimization
+- 🔮 Interactive lens effect with blur overlay
 
 ## 🚀 Run Locally
 
@@ -26,17 +27,17 @@ npm run dev
 npm run build
 ```
 
-## 📁 Struktura projekta
+## 📁 Project Structure
 
 ```
 src/
-├── components/     # React komponente
-├── App.tsx         # Glavna aplikacija
+├── components/     # React components
+├── App.tsx         # Main application
 ├── main.tsx        # Entry point
-├── index.css       # Tailwind stilovi
-└── translations.ts # i18n prijevodi
+├── index.css       # Tailwind styles
+└── translations.ts # i18n translations
 public/
 ├── favicon.svg     # Favicon
-├── hero.png        # Hero slika
-└── tehnologija.jpg # Slika za Technology sekciju
+├── hero.png        # Hero image
+└── tehnologija.jpg # Technology section image
 ```
