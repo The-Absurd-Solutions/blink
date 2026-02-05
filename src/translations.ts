@@ -88,7 +88,9 @@ export const translations = {
             hours: "Pon - Pet: 08:00 - 20:00",
             tagline: "Oftalmološka ordinacija posvećena očuvanju i unapređenju vašeg vida.",
             copyright: "© 2026 Blink Oftalmološka ordinacija. Sva prava zadržana.",
-            location: "Beograd, Srbija"
+            location: "Beograd, Srbija",
+            privacy: "politika privatnosti",
+            terms: "uslovi korišćenja"
         }
     },
     en: {
@@ -180,7 +182,9 @@ export const translations = {
             hours: "Mon - Fri: 08:00 - 20:00",
             tagline: "Eye clinic dedicated to preserving and enhancing your vision.",
             copyright: "© 2026 Blink Eye Clinic. All rights reserved.",
-            location: "Belgrade, Serbia"
+            location: "Belgrade, Serbia",
+            privacy: "privacy policy",
+            terms: "terms of service"
         }
     }
 };

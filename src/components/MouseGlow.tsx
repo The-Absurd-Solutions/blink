@@ -93,20 +93,6 @@ const MouseGlow = ({ isEnabled, lang }: MouseGlowProps) => {
                 className="pointer-events-none absolute inset-0 z-50 overflow-hidden"
                 aria-hidden="true"
             >
-                {/* Soft golden glow */}
-                <div
-                    className="absolute rounded-full bg-[#ffce53]"
-                    style={{
-                        width: '500px',
-                        height: '500px',
-                        filter: 'blur(150px)',
-                        opacity: isVisible ? 0.25 : 0,
-                        transform: `translate(${position.x - 250}px, ${position.y - 250}px)`,
-                        transition: 'transform 0.15s ease-out, opacity 0.3s ease',
-                        willChange: 'transform',
-                    }}
-                />
-
                 {/* Text above lens */}
                 <div
                     className="absolute flex items-center justify-center"
@@ -133,20 +119,19 @@ const MouseGlow = ({ isEnabled, lang }: MouseGlowProps) => {
                         transform: `translate(${smoothPosition.x - lensSize / 2}px, ${smoothPosition.y - lensSize / 2}px)`,
                         transition: 'opacity 0.3s ease',
                         willChange: 'transform',
-                        border: '2px solid rgba(255, 206, 83, 0.4)',
-                        background: 'radial-gradient(circle at 30% 30%, rgba(255,255,255,0.05) 0%, transparent 50%)',
+                        border: '1px solid rgba(0, 0, 0, 0.15)',
+                        background: 'radial-gradient(circle at 30% 30%, rgba(255,255,255,0.03) 0%, transparent 50%)',
                     }}
                 />
 
-                {/* Small bright focus dot */}
+                {/* Small focus dot */}
                 <div
-                    className="absolute rounded-full bg-[#ffce53]"
+                    className="absolute rounded-full bg-black/40"
                     style={{
-                        width: '8px',
-                        height: '8px',
+                        width: '6px',
+                        height: '6px',
                         opacity: isVisible ? 1 : 0,
-                        transform: `translate(${position.x - 4}px, ${position.y - 4}px)`,
-                        boxShadow: '0 0 15px rgba(255, 206, 83, 0.9)',
+                        transform: `translate(${position.x - 3}px, ${position.y - 3}px)`,
                         transition: 'opacity 0.2s ease',
                         willChange: 'transform',
                     }}

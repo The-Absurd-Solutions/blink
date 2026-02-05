@@ -1,41 +1,79 @@
-import { ArrowRight, Instagram, Facebook } from 'lucide-react';
+import { Instagram, Facebook } from 'lucide-react';
 import { translations } from '../translations';
+
+type PageView = 'home' | 'booking' | 'privacy' | 'terms';
 
 interface FooterProps {
     lang: 'sr' | 'en';
+    setCurrentPage: (page: PageView) => void;
 }
 
-const Footer = ({ lang }: FooterProps) => {
+const Footer = ({ lang, setCurrentPage }: FooterProps) => {
     const t = translations[lang].footer;
     const nav = translations[lang].nav;
 
     return (
         <>
             {/* CTA Section */}
-            <section className="py-24 px-4 md:px-8 bg-gray-50">
+            <section className="py-28 px-4 md:px-8 bg-gray-50">
                 <div className="max-w-[1400px] mx-auto">
-                    <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-12">
-                        <div>
-                            <div className="flex items-center gap-3 mb-4">
-                                <div className="w-8 h-[1px] bg-[#ffce53]"></div>
-                                <span className="text-xs tracking-[0.3em] text-gray-400">
-                                    {t.ready}
-                                </span>
-                            </div>
-                            <h2 className="text-4xl md:text-6xl font-black text-black tracking-tight leading-tight max-w-xl">
-                                {t.ctaTitle}<span className="inline-block w-2 h-2 rounded-full bg-[#ffce53] ml-1 align-top"></span>
-                            </h2>
+                    {/* Title */}
+                    <div className="text-center mb-16">
+                        <div className="flex items-center justify-center gap-3 mb-6">
+                            <div className="w-12 h-px bg-[#ffce53]"></div>
+                            <span className="text-xs tracking-[0.3em] text-gray-400">
+                                {t.ready}
+                            </span>
+                            <div className="w-12 h-px bg-[#ffce53]"></div>
                         </div>
-                        <div className="flex flex-col items-start md:items-end gap-4">
-                            <p className="text-gray-500 text-base max-w-xs md:text-right">{t.ctaSubtitle}</p>
-                            <a
-                                href="tel:+381211234567"
-                                className="group bg-black text-white px-8 py-4 text-sm font-medium flex items-center gap-3 hover:bg-[#ffce53] hover:text-black transition-all duration-300"
-                                aria-label={lang === 'sr' ? 'Zakažite pregled pozivom' : 'Book appointment by calling'}
-                            >
-                                {t.ctaButton}
-                                <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" aria-hidden="true" />
-                            </a>
+                        <h2 className="text-5xl md:text-7xl font-black text-black tracking-tight leading-none">
+                            {t.ctaTitle}<span className="inline-block w-3 h-3 rounded-full bg-[#ffce53] ml-2 align-top"></span>
+                        </h2>
+                    </div>
+                    
+                    {/* Contact Cards */}
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+                        {/* Phone */}
+                        <a 
+                            href="tel:+381211234567" 
+                            className="group bg-white rounded-2xl p-8 text-center hover:bg-black transition-all duration-300"
+                        >
+                            <p className="text-[11px] tracking-[0.2em] text-gray-400 group-hover:text-gray-500 mb-3 transition-colors">
+                                {lang === 'sr' ? 'telefon' : 'phone'}
+                            </p>
+                            <p className="text-2xl md:text-3xl font-semibold text-black group-hover:text-white transition-colors">
+                                +381 21 123 4567
+                            </p>
+                        </a>
+                        
+                        {/* Email */}
+                        <a 
+                            href="mailto:info@blink.rs" 
+                            className="group bg-white rounded-2xl p-8 text-center hover:bg-black transition-all duration-300"
+                        >
+                            <p className="text-[11px] tracking-[0.2em] text-gray-400 group-hover:text-gray-500 mb-3 transition-colors">
+                                email
+                            </p>
+                            <p className="text-2xl md:text-3xl font-semibold text-black group-hover:text-white transition-colors">
+                                info@blink.rs
+                            </p>
+                        </a>
+                        
+                        {/* Hours */}
+                        <div className="bg-white rounded-2xl p-8 text-center">
+                            <p className="text-[11px] tracking-[0.2em] text-gray-400 mb-3">
+                                {lang === 'sr' ? 'radno vrijeme' : 'hours'}
+                            </p>
+                            <div className="space-y-1">
+                                <p className="text-xl md:text-2xl font-semibold text-black">
+                                    <span className="text-gray-400 text-base font-normal mr-2">{lang === 'sr' ? 'pon–pet' : 'mon–fri'}</span>
+                                    08–20h
+                                </p>
+                                <p className="text-xl md:text-2xl font-semibold text-black">
+                                    <span className="text-gray-400 text-base font-normal mr-2">{lang === 'sr' ? 'sub' : 'sat'}</span>
+                                    09–14h
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -132,9 +170,13 @@ const Footer = ({ lang }: FooterProps) => {
                     {/* Bottom bar */}
                     <div className="pt-8 border-t border-gray-200 flex flex-col md:flex-row justify-between items-center gap-4">
                         <span className="text-gray-400 text-xs tracking-wide">{t.copyright}</span>
-                        <div className="flex items-center gap-2 text-gray-400 text-xs">
-                            <span className="w-1 h-1 rounded-full bg-[#ffce53]"></span>
-                            <span>{t.location}</span>
+                        <div className="flex items-center gap-6 text-gray-400 text-xs">
+                            <button onClick={() => setCurrentPage('privacy')} className="hover:text-gray-600 transition-colors">{t.privacy}</button>
+                            <button onClick={() => setCurrentPage('terms')} className="hover:text-gray-600 transition-colors">{t.terms}</button>
+                            <div className="flex items-center gap-2">
+                                <span className="w-1 h-1 rounded-full bg-[#ffce53]"></span>
+                                <span>{t.location}</span>
+                            </div>
                         </div>
                     </div>
 

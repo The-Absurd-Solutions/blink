@@ -36,26 +36,27 @@ const Services = ({ lang }: ServicesProps) => {
                             key={index}
                             className="group cursor-pointer border-t border-gray-100 first:border-t-0"
                         >
-                            <article className="py-10 md:py-14 flex items-center gap-8 md:gap-16">
-                                {/* Number */}
-                                <span className="text-sm font-medium text-gray-300 w-8" aria-hidden="true">
-                                    {service.number}
-                                </span>
+                            <article className="py-8 md:py-14 flex flex-col md:flex-row md:items-center gap-4 md:gap-16">
+                                {/* Number & Title Row */}
+                                <div className="flex items-center gap-4 md:gap-8 flex-1">
+                                    {/* Number */}
+                                    <span className="text-sm font-medium text-gray-300 w-8 shrink-0" aria-hidden="true">
+                                        {service.number}
+                                    </span>
 
-                                {/* Title */}
-                                <div className="flex-1">
-                                    <h3 className="text-2xl md:text-3xl font-bold text-black group-hover:text-gray-600 tracking-tight transition-colors duration-300">
+                                    {/* Title */}
+                                    <h3 className="text-xl md:text-3xl font-bold text-black group-hover:text-gray-600 tracking-tight transition-colors duration-300">
                                         {service.title}
                                     </h3>
                                 </div>
 
-                                {/* Description - Hidden on mobile, shown on hover for desktop */}
-                                <p className="hidden md:block text-gray-400 text-sm max-w-xs opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-x-4 group-hover:translate-x-0">
+                                {/* Description - Shown on mobile below, hover on desktop */}
+                                <p className="text-gray-400 text-sm max-w-xs pl-12 md:pl-0 md:opacity-0 md:group-hover:opacity-100 transition-all duration-300 md:transform md:translate-x-4 md:group-hover:translate-x-0">
                                     {service.description}
                                 </p>
 
-                                {/* Arrow */}
-                                <div className="flex items-center gap-4" aria-hidden="true">
+                                {/* Arrow - Hidden on mobile */}
+                                <div className="hidden md:flex items-center gap-4" aria-hidden="true">
                                     <div className="w-0 group-hover:w-8 h-[1px] bg-[#ffce53] transition-all duration-300"></div>
                                     <ArrowRight
                                         size={20}

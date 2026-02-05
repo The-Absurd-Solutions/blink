@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zakažite pregled | Blink</title>
+    <meta name="description" content="Zakažite pregled u Blink oftalmološkoj ordinaciji. Kontaktirajte nas telefonom ili emailom.">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html, body { 
+            height: 100%; 
+            overflow: hidden;
+        }
+        body { 
+            font-family: 'Outfit', sans-serif; 
+            background: #f3f4f6; 
+            color: #1f2937; 
+            display: flex;
+            flex-direction: column;
+        }
+        
+        /* Header - matches main site */
+        header {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: 16px 32px;
+        }
+        
+        .nav-left {
+            padding: 12px 24px;
+            display: flex;
+            gap: 24px;
+            align-items: center;
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 0.025em;
+            color: #1f2937;
+        }
+        
+        .nav-left a {
+            color: inherit;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .nav-left a:hover {
+            color: #000;
+        }
+        
+        .nav-divider {
+            width: 1px;
+            height: 16px;
+            background: #d1d5db;
+            margin: 0 8px;
+        }
+        
+        .lang-btn {
+            background: none;
+            border: none;
+            font-family: inherit;
+            font-size: 14px;
+            cursor: pointer;
+            transition: color 0.3s;
+            color: #9ca3af;
+        }
+        
+        .lang-btn:hover {
+            color: #000;
+        }
+        
+        .lang-btn.active {
+            color: #000;
+            font-weight: 700;
+        }
+        
+        .cta-btn {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: #ffce53;
+            color: #000;
+            padding: 12px 24px;
+            border-radius: 9999px;
+            font-size: 14px;
+            font-weight: 500;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+        
+        .cta-btn:hover {
+            background: #ffd970;
+        }
+        
+        /* Main content */
+        main {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            padding: 0 32px 32px;
+        }
+        
+        .container { 
+            max-width: 1200px; 
+            margin: 0 auto;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 60px;
+            align-items: center;
+        }
+        
+        .label {
+            font-size: 11px;
+            letter-spacing: 0.25em;
+            color: #9ca3af;
+            margin-bottom: 12px;
+        }
+        
+        h1 { 
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 900;
+            line-height: 1;
+            letter-spacing: -0.03em;
+            margin-bottom: 16px;
+        }
+        
+        .subtitle {
+            font-size: 1rem;
+            color: #6b7280;
+            font-weight: 300;
+            line-height: 1.6;
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+        }
+        
+        .card {
+            padding: 24px;
+            background: white;
+            border-radius: 16px;
+            transition: transform 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-2px);
+        }
+        
+        .card.full {
+            grid-column: span 2;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .card-label {
+            font-size: 10px;
+            letter-spacing: 0.15em;
+            color: #9ca3af;
+            margin-bottom: 8px;
+        }
+        
+        .card-content {
+            font-size: 1.25rem;
+            font-weight: 500;
+            color: #1f2937;
+            text-decoration: none;
+            display: block;
+            transition: color 0.3s;
+        }
+        
+        a.card-content:hover {
+            color: #c9a227;
+        }
+        
+        .hours-row {
+            display: flex;
+            gap: 32px;
+        }
+        
+        .hours-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .hours-day {
+            font-size: 12px;
+            color: #9ca3af;
+        }
+        
+        .hours-time {
+            font-size: 14px;
+            font-weight: 500;
+        }
+        
+        .dot {
+            display: inline-block;
+            width: 6px;
+            height: 6px;
+            background: #ffce53;
+            border-radius: 50%;
+        }
+        
+        /* Hide on mobile */
+        @media (max-width: 768px) {
+            .nav-left { display: none; }
+            header { padding: 16px 20px; }
+        }
+        
+        @media (max-width: 900px) {
+            .container {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+            main { padding: 0 20px 20px; }
+        }
+        
+        @media (max-width: 600px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+            .card.full {
+                grid-column: span 1;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 16px;
+            }
+            .hours-row {
+                flex-direction: column;
+                gap: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="nav-left">
+            <a href="/#services" data-sr="usluge" data-en="services">usluge</a>
+            <a href="/#technology" data-sr="tehnologija" data-en="technology">tehnologija</a>
+            <a href="/#faq">faq</a>
+            <a href="/#contact" data-sr="kontakt" data-en="contact">kontakt</a>
+            <div class="nav-divider"></div>
+            <button class="lang-btn active" id="btn-sr">sr</button>
+            <button class="lang-btn" id="btn-en">en</button>
+        </nav>
+        <a href="/" class="cta-btn" id="back-btn" data-sr="← nazad na početnu" data-en="← back to home">
+            ← nazad na početnu
+        </a>
+    </header>
+    
+    <main>
+        <div class="container">
+            <div class="left">
+                <p class="label" data-sr="kontakt" data-en="contact">kontakt</p>
+                <h1 id="title" data-sr="Zakažite<br>pregled" data-en="Book an<br>appointment">Zakažite<br>pregled</h1>
+                <p class="subtitle" data-sr="Vaš vid zaslužuje pažnju.<br>Javite nam se i zakažite termin." data-en="Your vision deserves attention.<br>Contact us and schedule your appointment.">Vaš vid zaslužuje pažnju.<br>Javite nam se i zakažite termin.</p>
+            </div>
+
+            <div class="grid">
+                <div class="card">
+                    <p class="card-label" data-sr="telefon" data-en="phone">telefon</p>
+                    <a href="tel:+381211234567" class="card-content">+381 21 123 4567</a>
+                </div>
+
+                <div class="card">
+                    <p class="card-label">email</p>
+                    <a href="mailto:info@blink.rs" class="card-content">info@blink.rs</a>
+                </div>
+
+                <div class="card full">
+                    <div>
+                        <p class="card-label" data-sr="adresa" data-en="address">adresa</p>
+                        <a href="https://maps.google.com/?q=Bulevar+Mihajla+Pupina+10+Beograd" target="_blank" rel="noopener" class="card-content" data-sr="Bulevar Mihajla Pupina 10, Beograd" data-en="Bulevar Mihajla Pupina 10, Belgrade">
+                            Bulevar Mihajla Pupina 10, Beograd
+                        </a>
+                    </div>
+                    <div class="hours-row">
+                        <div class="hours-item">
+                            <span class="dot"></span>
+                            <span class="hours-day" data-sr="pon–pet" data-en="mon–fri">pon–pet</span>
+                            <span class="hours-time">08–20h</span>
+                        </div>
+                        <div class="hours-item">
+                            <span class="dot"></span>
+                            <span class="hours-day" data-sr="sub" data-en="sat">sub</span>
+                            <span class="hours-time">09–14h</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        const translations = document.querySelectorAll('[data-sr]');
+        const btnSr = document.getElementById('btn-sr');
+        const btnEn = document.getElementById('btn-en');
+        
+        function setLang(lang) {
+            translations.forEach(el => {
+                if (el.id === 'title') {
+                    el.innerHTML = el.dataset[lang];
+                } else {
+                    el.textContent = el.dataset[lang];
+                }
+            });
+            
+            // Update document
+            document.documentElement.lang = lang === 'sr' ? 'sr' : 'en';
+            document.title = lang === 'sr' ? 'Zakažite pregled | Blink' : 'Book Appointment | Blink';
+            
+            // Update button states
+            btnSr.classList.toggle('active', lang === 'sr');
+            btnEn.classList.toggle('active', lang === 'en');
+            
+            // Store preference
+            localStorage.setItem('blink-lang', lang);
+        }
+        
+        btnSr.addEventListener('click', () => setLang('sr'));
+        btnEn.addEventListener('click', () => setLang('en'));
+        
+        // Check for stored preference or URL param
+        const urlParams = new URLSearchParams(window.location.search);
+        const storedLang = localStorage.getItem('blink-lang');
+        const urlLang = urlParams.get('lang');
+        
+        if (urlLang === 'en' || storedLang === 'en') {
+            setLang('en');
+        }
+    </script>
+</body>
+</html>

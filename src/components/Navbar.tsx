@@ -7,9 +7,11 @@ interface NavbarProps {
     setLang: (l: 'sr' | 'en') => void;
     lensEnabled: boolean;
     setLensEnabled: (enabled: boolean) => void;
+    showBooking?: boolean;
+    setShowBooking?: (show: boolean) => void;
 }
 
-const Navbar = ({ lang, setLang, lensEnabled, setLensEnabled }: NavbarProps) => {
+const Navbar = ({ lang, setLang, lensEnabled, setLensEnabled, showBooking, setShowBooking }: NavbarProps) => {
     const t = translations[lang].nav;
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -75,13 +77,13 @@ const Navbar = ({ lang, setLang, lensEnabled, setLensEnabled }: NavbarProps) => 
                 </button>
 
                 {/* CTA Button - Desktop only */}
-                <a
-                    href="tel:+381211234567"
+                <button
+                    onClick={() => setShowBooking?.(!showBooking)}
                     className="hidden md:flex bg-[#ffce53] text-black px-6 py-3 rounded-full text-sm font-medium items-center gap-2 hover:bg-[#ffd970] transition-all duration-300"
-                    aria-label={lang === 'sr' ? 'Zakažite pregled pozivom' : 'Book appointment by calling'}
+                    aria-label={lang === 'sr' ? 'Zakažite pregled' : 'Book appointment'}
                 >
-                    {t.cta} <ArrowRight size={16} aria-hidden="true" />
-                </a>
+                    {showBooking ? (lang === 'sr' ? '← nazad' : '← back') : t.cta} {!showBooking && <ArrowRight size={16} aria-hidden="true" />}
+                </button>
             </nav>
 
             {/* Mobile Menu Overlay */}
@@ -131,14 +133,13 @@ const Navbar = ({ lang, setLang, lensEnabled, setLensEnabled }: NavbarProps) => 
                     </div>
 
                     {/* CTA Button */}
-                    <a
-                        href="tel:+381211234567"
+                    <button
                         className="mt-auto bg-[#ffce53] text-black px-6 py-4 rounded-full text-sm font-medium flex items-center justify-center gap-2 hover:bg-[#ffd970] transition-all duration-300"
-                        onClick={() => setMobileMenuOpen(false)}
-                        aria-label={lang === 'sr' ? 'Zakažite pregled pozivom' : 'Book appointment by calling'}
+                        onClick={() => { setMobileMenuOpen(false); setShowBooking?.(!showBooking); }}
+                        aria-label={lang === 'sr' ? 'Zakažite pregled' : 'Book appointment'}
                     >
-                        {t.cta} <ArrowRight size={16} aria-hidden="true" />
-                    </a>
+                        {showBooking ? (lang === 'sr' ? '← nazad' : '← back') : t.cta} {!showBooking && <ArrowRight size={16} aria-hidden="true" />}
+                    </button>
                 </div>
             </div>
         </>
