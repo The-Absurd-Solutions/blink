@@ -1,32 +1,26 @@
+import { useState } from 'react';
 import { translations } from '../translations';
+import { useLanguage } from '../context/LanguageContext';
 import Navbar from './Navbar';
-import FloatingBlobs from './FloatingBlobs';
 import EyeDot from './EyeDot';
 import HeroImage from './HeroImage';
 import ArtisticAccent from './ArtisticAccent';
-import ArtisticAccentRight from './ArtisticAccentRight';
 import MouseGlow from './MouseGlow';
 
-interface HeroProps {
-    lang: 'sr' | 'en';
-    setLang: (l: 'sr' | 'en') => void;
-    lensEnabled: boolean;
-    setLensEnabled: (enabled: boolean) => void;
-}
-
-const Hero = ({ lang, setLang, lensEnabled, setLensEnabled }: HeroProps) => {
+const Hero = () => {
+    const { lang } = useLanguage();
+    const [lensEnabled, setLensEnabled] = useState(true);
     const t = translations[lang].hero;
 
     return (
         <header className="relative w-full min-h-[85vh] flex flex-col overflow-hidden bg-gray-50" role="banner">
-            <MouseGlow isEnabled={lensEnabled} lang={lang} />
-            <FloatingBlobs />
-            <Navbar lang={lang} setLang={setLang} lensEnabled={lensEnabled} setLensEnabled={setLensEnabled} />
+            <MouseGlow isEnabled={lensEnabled} />
+            <Navbar lensEnabled={lensEnabled} setLensEnabled={setLensEnabled} />
 
-            <main id="main-content" className="flex-grow flex flex-col relative w-full max-w-[1600px] mx-auto px-4 md:px-8 pt-6 pb-8 justify-center">
+            <main id="main-content" className="grow flex flex-col relative w-full max-w-400 mx-auto px-4 md:px-8 pt-6 pb-8 justify-center">
 
                 {/* Giant Title */}
-                <div className="w-full text-center relative z-[60] mb-4 md:mb-8" style={{ isolation: 'isolate' }}>
+                <div className="w-full text-center relative z-60 mb-4 md:mb-8" style={{ isolation: 'isolate' }}>
                     <p className="text-sm md:text-base tracking-[0.3em] text-gray-500 mb-2">
                         {t.clinic}
                     </p>
@@ -43,7 +37,7 @@ const Hero = ({ lang, setLang, lensEnabled, setLensEnabled }: HeroProps) => {
                         <p className="text-base md:text-lg leading-relaxed text-gray-800 font-medium max-w-xs">
                             {t.left}
                         </p>
-                        <ArtisticAccent lang={lang} />
+                        <ArtisticAccent />
                     </div>
 
                     {/* Center Image Column */}
@@ -56,7 +50,7 @@ const Hero = ({ lang, setLang, lensEnabled, setLensEnabled }: HeroProps) => {
                         <p className="text-base md:text-lg leading-relaxed text-gray-800 font-medium max-w-xs">
                             {t.right}
                         </p>
-                        <ArtisticAccentRight lang={lang} />
+                        <ArtisticAccent align="right" />
                     </div>
 
                 </div>

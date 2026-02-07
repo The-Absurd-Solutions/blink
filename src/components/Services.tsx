@@ -1,21 +1,19 @@
 import { ArrowRight } from 'lucide-react';
 import { translations } from '../translations';
+import { useLanguage } from '../context/LanguageContext';
 
-interface ServicesProps {
-    lang: 'sr' | 'en';
-}
-
-const Services = ({ lang }: ServicesProps) => {
+const Services = () => {
+    const { lang } = useLanguage();
     const t = translations[lang].services;
 
     return (
         <section id="services" className="relative py-24 px-4 md:px-8 bg-gray-50 overflow-hidden" aria-labelledby="services-heading">
-            <div className="relative max-w-[1400px] mx-auto">
+            <div className="relative max-w-350 mx-auto">
                 {/* Section Header */}
                 <header className="mb-24 flex flex-col md:flex-row md:items-end md:justify-between gap-8">
                     <div>
                         <div className="flex items-center gap-3 mb-4">
-                            <div className="w-8 h-[1px] bg-[#ffce53]" aria-hidden="true"></div>
+                            <div className="w-8 h-px bg-[#ffce53]" aria-hidden="true"></div>
                             <span className="text-xs tracking-[0.3em] text-gray-400">
                                 {t.label}
                             </span>
@@ -57,7 +55,7 @@ const Services = ({ lang }: ServicesProps) => {
 
                                 {/* Arrow - Hidden on mobile */}
                                 <div className="hidden md:flex items-center gap-4" aria-hidden="true">
-                                    <div className="w-0 group-hover:w-8 h-[1px] bg-[#ffce53] transition-all duration-300"></div>
+                                    <div className="w-0 group-hover:w-8 h-px bg-[#ffce53] transition-all duration-300"></div>
                                     <ArrowRight
                                         size={20}
                                         className="text-gray-300 group-hover:text-[#ffce53] transition-all duration-300 transform group-hover:translate-x-1"
@@ -66,7 +64,7 @@ const Services = ({ lang }: ServicesProps) => {
                             </article>
 
                             {/* Yellow underline on hover */}
-                            <div className="h-[2px] bg-[#ffce53] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" aria-hidden="true"></div>
+                            <div className="h-0.5 bg-[#ffce53] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" aria-hidden="true"></div>
                         </li>
                     ))}
                 </ul>

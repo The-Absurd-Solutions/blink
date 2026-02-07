@@ -74,38 +74,6 @@ body {
   animation: pulse-glow 2s ease-in-out infinite;
 }
 
-/* Floating blobs animation */
-@keyframes float-1 {
-  0%, 100% {
-    transform: translate(0, 0) scale(1);
-  }
-  33% {
-    transform: translate(30px, -30px) scale(1.05);
-  }
-  66% {
-    transform: translate(-20px, 20px) scale(0.95);
-  }
-}
-
-@keyframes float-2 {
-  0%, 100% {
-    transform: translate(0, 0) scale(1);
-  }
-  33% {
-    transform: translate(-25px, 25px) scale(0.95);
-  }
-  66% {
-    transform: translate(35px, -20px) scale(1.05);
-  }
-}
-
-.blob-1 {
-  animation: float-1 15s ease-in-out infinite;
-}
-
-.blob-2 {
-  animation: float-2 18s ease-in-out infinite;
-}
 
 /* ===== CLS Prevention ===== */
 /* Reserve space for images to prevent layout shift */
@@ -170,11 +138,6 @@ section {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
-  }
-  
-  .blob-1,
-  .blob-2 {
-    animation: none;
   }
   
   .eye-dot {

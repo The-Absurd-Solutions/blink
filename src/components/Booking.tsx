@@ -1,20 +1,18 @@
 import { translations } from '../translations';
+import { useLanguage } from '../context/LanguageContext';
 
-interface BookingProps {
-    lang: 'sr' | 'en';
-}
-
-const Booking = ({ lang }: BookingProps) => {
+const Booking = () => {
+    const { lang } = useLanguage();
     const t = translations[lang].booking;
 
     return (
         <section id="contact" className="py-24 px-4 md:px-8 bg-gray-50" aria-labelledby="booking-heading">
-            <div className="max-w-[1400px] mx-auto">
+            <div className="max-w-350 mx-auto">
                 {/* Section Header - consistent with other sections */}
                 <header className="mb-24 flex flex-col md:flex-row md:items-end md:justify-between gap-8">
                     <div>
                         <div className="flex items-center gap-3 mb-4">
-                            <div className="w-8 h-[1px] bg-[#ffce53]" aria-hidden="true"></div>
+                            <div className="w-8 h-px bg-[#ffce53]" aria-hidden="true"></div>
                             <span className="text-xs tracking-[0.3em] text-gray-400">
                                 {t.label}
                             </span>
@@ -32,7 +30,7 @@ const Booking = ({ lang }: BookingProps) => {
                 </header>
 
                 {/* Contact Cards */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-[900px] ml-0">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-225 ml-0">
                     {/* Phone */}
                     <div className="bg-white rounded-lg p-6 group transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
                         <p className="text-[10px] tracking-[0.15em] text-gray-400 mb-2 uppercase">

@@ -1,15 +1,14 @@
+import { useLanguage } from '../context/LanguageContext';
 
-interface HeroImageProps {
-    lang?: 'sr' | 'en';
-}
+const HeroImage = () => {
+    const { lang } = useLanguage();
 
-const HeroImage = ({ lang = 'sr' }: HeroImageProps) => {
     const altText = lang === 'sr'
-        ? "Moderna oftalmološka oprema u Blink ordinaciji za preciznu dijagnostiku vida - najsavremeniji uređaji za pregled očiju u Beogradu"
-        : "Modern ophthalmic equipment at Blink clinic for precise vision diagnostics - state-of-the-art eye examination devices in Belgrade";
+        ? "Moderna oftalmološka oprema u Blink ordinaciji za preciznu dijagnostiku vida - najsavremeniji uređaji za pregled očiju u Novom Pazaru"
+        : "Modern ophthalmic equipment at Blink clinic for precise vision diagnostics - state-of-the-art eye examination devices in Novi Pazar";
 
     return (
-        <figure className="relative w-full max-w-[500px] md:max-w-xl lg:max-w-2xl overflow-hidden mx-auto group">
+        <figure className="relative w-full max-w-125 md:max-w-xl lg:max-w-2xl overflow-hidden mx-auto group">
             <img
                 src="/hero.png"
                 alt={altText}

@@ -1,17 +1,61 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { X, Eye, EyeOff } from 'lucide-react';
 import { translations } from '../translations';
+import { useLanguage } from '../context/LanguageContext';
 
 interface NavbarProps {
-    lang: 'sr' | 'en';
-    setLang: (l: 'sr' | 'en') => void;
     lensEnabled: boolean;
     setLensEnabled: (enabled: boolean) => void;
 }
 
-const Navbar = ({ lang, setLang, lensEnabled, setLensEnabled }: NavbarProps) => {
+const Navbar = ({ lensEnabled, setLensEnabled }: NavbarProps) => {
+    const { lang, setLang } = useLanguage();
     const t = translations[lang].nav;
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+    const menuRef = useRef<HTMLDivElement>(null);
+
+    // Focus trap for mobile menu
+    useEffect(() => {
+        if (!mobileMenuOpen) return;
+
+        const menuEl = menuRef.current;
+        if (!menuEl) return;
+
+        const focusableElements = menuEl.querySelectorAll<HTMLElement>(
+            'a[href], button, [tabindex]:not([tabindex="-1"])'
+        );
+
+        if (focusableElements.length === 0) return;
+
+        const firstEl = focusableElements[0];
+        const lastEl = focusableElements[focusableElements.length - 1];
+
+        firstEl.focus();
+
+        const handleKeyDown = (e: KeyboardEvent) => {
+            if (e.key === 'Escape') {
+                setMobileMenuOpen(false);
+                return;
+            }
+
+            if (e.key !== 'Tab') return;
+
+            if (e.shiftKey) {
+                if (document.activeElement === firstEl) {
+                    e.preventDefault();
+                    lastEl.focus();
+                }
+            } else {
+                if (document.activeElement === lastEl) {
+                    e.preventDefault();
+                    firstEl.focus();
+                }
+            }
+        };
+
+        document.addEventListener('keydown', handleKeyDown);
+        return () => document.removeEventListener('keydown', handleKeyDown);
+    }, [mobileMenuOpen]);
 
     return (
         <>
@@ -21,7 +65,7 @@ const Navbar = ({ lang, setLang, lensEnabled, setLensEnabled }: NavbarProps) => 
             </a>
             <nav className="w-full flex justify-between items-start p-4 md:p-8 relative z-50" role="navigation" aria-label={lang === 'sr' ? 'Glavna navigacija' : 'Main navigation'}>
                 {/* Left Navigation */}
-                <div className="px-6 py-3 flex gap-6 items-center text-sm font-medium tracking-wide text-gray-800 hidden md:flex">
+                <div className="px-6 py-3 gap-6 items-center text-sm font-medium tracking-wide text-gray-800 hidden md:flex">
                     <a href="#services" className="nav-link hover:text-black transition-colors">{t.services}</a>
                     <a href="#technology" className="nav-link hover:text-black transition-colors">{t.tech}</a>
                     <a href="#faq" className="nav-link hover:text-black transition-colors">{t.faq || 'FAQ'}</a>
@@ -52,7 +96,9 @@ const Navbar = ({ lang, setLang, lensEnabled, setLensEnabled }: NavbarProps) => 
                             ? 'text-gray-400 hover:text-gray-600'
                             : 'text-[#c9a227] hover:text-[#b08d1f]'
                             }`}
-                        aria-label={lensEnabled ? 'Isključi efekat lupe' : 'Uključi efekat lupe'}
+                        aria-label={lensEnabled
+                            ? (lang === 'sr' ? 'Isključi efekat lupe' : 'Disable lens effect')
+                            : (lang === 'sr' ? 'Uključi efekat lupe' : 'Enable lens effect')}
                     >
                         {lensEnabled ? <EyeOff size={13} strokeWidth={1.5} /> : <Eye size={13} strokeWidth={1.5} />}
                         <span className="font-medium">{lensEnabled ? '+2.00' : '0.00'}</span>
@@ -78,14 +124,15 @@ const Navbar = ({ lang, setLang, lensEnabled, setLensEnabled }: NavbarProps) => 
 
             {/* Mobile Menu Overlay */}
             <div
-                className={`fixed inset-0 bg-black/50 z-[100] transition-opacity duration-300 md:hidden ${mobileMenuOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
+                className={`fixed inset-0 bg-black/50 z-100 transition-opacity duration-300 md:hidden ${mobileMenuOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
                 onClick={() => setMobileMenuOpen(false)}
             />
 
             {/* Mobile Menu Panel */}
             <div
+                ref={menuRef}
                 id="mobile-menu"
-                className={`fixed top-0 right-0 h-full w-80 max-w-[85vw] bg-gray-50 z-[101] transform transition-transform duration-300 ease-out md:hidden ${mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}
+                className={`fixed top-0 right-0 h-full w-80 max-w-[85vw] bg-gray-50 z-101 transform transition-transform duration-300 ease-out md:hidden ${mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}
                 aria-hidden={!mobileMenuOpen}
             >
                 <div className="flex flex-col h-full p-6">

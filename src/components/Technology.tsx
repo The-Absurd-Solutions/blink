@@ -1,12 +1,9 @@
-
 import { useState, useEffect, useRef } from 'react';
 import { translations } from '../translations';
+import { useLanguage } from '../context/LanguageContext';
 
-interface TechnologyProps {
-    lang: 'sr' | 'en';
-}
-
-const Technology = ({ lang }: TechnologyProps) => {
+const Technology = () => {
+    const { lang } = useLanguage();
     const t = translations[lang].technology;
     const [visible, setVisible] = useState(false);
     const sectionRef = useRef<HTMLDivElement>(null);
@@ -22,12 +19,12 @@ const Technology = ({ lang }: TechnologyProps) => {
 
     return (
         <section id="technology" className="relative py-24 px-4 md:px-8 bg-gray-50" aria-labelledby="technology-heading">
-            <div className="relative max-w-[1400px] mx-auto">
+            <div className="relative max-w-350 mx-auto">
 
                 {/* Section Header - consistent with Services */}
                 <header className="mb-24">
                     <div className="flex items-center gap-3 mb-4">
-                        <div className="w-8 h-[1px] bg-[#ffce53]" aria-hidden="true"></div>
+                        <div className="w-8 h-px bg-[#ffce53]" aria-hidden="true"></div>
                         <span className="text-xs tracking-[0.3em] text-gray-400">{t.label}</span>
                     </div>
                     <h2 id="technology-heading" className="text-5xl md:text-7xl font-black tracking-tight text-black">
@@ -54,7 +51,7 @@ const Technology = ({ lang }: TechnologyProps) => {
                                     key={index}
                                     className={`group relative px-6 py-5
                                         transition-all duration-700 ease-out
-                                        min-w-[120px] text-center cursor-default
+                                        min-w-30 text-center cursor-default
                                         hover:-translate-y-1
                                         ${visible
                                             ? 'opacity-100 translate-y-0'
@@ -68,7 +65,7 @@ const Technology = ({ lang }: TechnologyProps) => {
                                     <div className="text-xs text-gray-600 tracking-widest font-medium">
                                         {stat.label}
                                     </div>
-                                    <div className="w-12 h-[1px] bg-[#ffce53] mx-auto mt-3 transition-all duration-500 group-hover:w-full" aria-hidden="true"></div>
+                                    <div className="w-12 h-px bg-[#ffce53] mx-auto mt-3 transition-all duration-500 group-hover:w-full" aria-hidden="true"></div>
                                 </div>
                             ))}
                         </div>
@@ -77,12 +74,12 @@ const Technology = ({ lang }: TechnologyProps) => {
                     {/* Image Side */}
                     <figure className="lg:col-span-7 relative order-1 lg:order-2">
                         <div className="relative">
-                            <div className="aspect-[4/3] overflow-hidden">
+                            <div className="aspect-4/3 overflow-hidden">
                                 <img
                                     src="/tehnologija.jpg"
                                     alt={lang === 'sr'
-                                        ? "Najsavremenija oftalmološka oprema Topcon za preciznu dijagnostiku očiju u Blink ordinaciji Beograd"
-                                        : "State-of-the-art Topcon ophthalmic equipment for precise eye diagnostics at Blink clinic Belgrade"}
+                                        ? "Najsavremenija oftalmološka oprema Topcon za preciznu dijagnostiku očiju u Blink ordinaciji Novi Pazar"
+                                        : "State-of-the-art Topcon ophthalmic equipment for precise eye diagnostics at Blink clinic Novi Pazar"}
                                     width={700}
                                     height={525}
                                     loading="lazy"
@@ -92,7 +89,7 @@ const Technology = ({ lang }: TechnologyProps) => {
                                 />
                             </div>
                             {/* Subtle accent line */}
-                            <div className="absolute -bottom-4 left-0 w-24 h-[2px] bg-[#ffce53]" aria-hidden="true"></div>
+                            <div className="absolute -bottom-4 left-0 w-24 h-0.5 bg-[#ffce53]" aria-hidden="true"></div>
                         </div>
                         <figcaption className="sr-only">
                             {lang === 'sr'

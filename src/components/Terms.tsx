@@ -1,142 +1,58 @@
-import { ArrowLeft } from 'lucide-react';
+import { useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { useLanguage } from '../context/LanguageContext';
+import { translations } from '../translations';
 
-interface TermsProps {
-    lang: 'sr' | 'en';
-    onClose: () => void;
-}
+const Terms = () => {
+    const { lang } = useLanguage();
+    const t = translations[lang].terms;
 
-const Terms = ({ lang, onClose }: TermsProps) => {
-    const content = {
-        sr: {
-            title: 'Uslovi korišćenja',
-            updated: 'Poslednje ažuriranje: Februar 2026',
-            intro: 'Dobrodošli na veb sajt Blink oftalmološke ordinacije. Korišćenjem ovog sajta prihvatate sledeće uslove.',
-            sections: [
-                {
-                    title: 'Usluge',
-                    content: 'Blink pruža oftalmološke usluge uključujući:',
-                    items: [
-                        'Kompjutersko određivanje dioptrije',
-                        'Pregled očnog dna',
-                        'Merenje očnog pritiska',
-                        'Savetovanje za kontaktna sočiva'
-                    ]
-                },
-                {
-                    title: 'Zakazivanje termina',
-                    content: 'Termini se mogu zakazati telefonom. Molimo vas da nas obavestite najmanje 24 sata unapred ukoliko niste u mogućnosti da dođete na zakazani termin.',
-                    items: []
-                },
-                {
-                    title: 'Plaćanje',
-                    content: 'Plaćanje se vrši nakon obavljenog pregleda. Prihvatamo gotovinu i platne kartice. Cene usluga su istaknute u ordinaciji.',
-                    items: []
-                },
-                {
-                    title: 'Odgovornost',
-                    content: 'Informacije na ovom sajtu su informativnog karaktera i ne zamenjuju profesionalni medicinski savet. Za sve zdravstvene probleme, obratite se lekaru.',
-                    items: []
-                },
-                {
-                    title: 'Intelektualna svojina',
-                    content: 'Sav sadržaj na ovom sajtu, uključujući tekstove, slike i dizajn, vlasništvo je Blink oftalmološke ordinacije i zaštićen je autorskim pravima.',
-                    items: []
-                },
-                {
-                    title: 'Izmene uslova',
-                    content: 'Zadržavamo pravo da izmenimo ove uslove u bilo kom trenutku. Izmene stupaju na snagu objavljivanjem na ovoj stranici.',
-                    items: []
-                },
-                {
-                    title: 'Kontakt',
-                    content: 'Za dodatna pitanja, kontaktirajte nas na +381 62 572 222 ili nas posetite na adresi Lug 32, Novi Pazar.',
-                    items: []
-                }
-            ]
-        },
-        en: {
-            title: 'Terms of Service',
-            updated: 'Last updated: February 2026',
-            intro: 'Welcome to the Blink eye clinic website. By using this site, you accept the following terms.',
-            sections: [
-                {
-                    title: 'Services',
-                    content: 'Blink provides ophthalmic services including:',
-                    items: [
-                        'Computer vision testing',
-                        'Fundus examination',
-                        'Eye pressure measurement',
-                        'Contact lens consultation'
-                    ]
-                },
-                {
-                    title: 'Appointment scheduling',
-                    content: 'Appointments can be scheduled by phone. Please notify us at least 24 hours in advance if you are unable to attend your scheduled appointment.',
-                    items: []
-                },
-                {
-                    title: 'Payment',
-                    content: 'Payment is made after the examination. We accept cash and credit cards. Service prices are displayed in the clinic.',
-                    items: []
-                },
-                {
-                    title: 'Liability',
-                    content: 'Information on this site is for informational purposes and does not replace professional medical advice. For all health problems, consult a doctor.',
-                    items: []
-                },
-                {
-                    title: 'Intellectual property',
-                    content: 'All content on this site, including text, images and design, is the property of Blink eye clinic and is protected by copyright.',
-                    items: []
-                },
-                {
-                    title: 'Changes to terms',
-                    content: 'We reserve the right to modify these terms at any time. Changes take effect upon publication on this page.',
-                    items: []
-                },
-                {
-                    title: 'Contact',
-                    content: 'For additional questions, contact us at +381 62 572 222 or visit us at Lug 32, Novi Pazar.',
-                    items: []
-                }
-            ]
-        }
-    };
-
-    const t = content[lang];
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
 
     return (
-        <section className="flex-1 overflow-y-auto px-4 md:px-8 py-8">
-            <div className="max-w-[800px] mx-auto">
-                {/* Back button */}
-                <button
-                    onClick={onClose}
-                    className="flex items-center gap-2 text-sm text-gray-400 hover:text-black transition-colors mb-10"
+        <div className="min-h-screen bg-[#f3f4f6] text-gray-800 leading-relaxed">
+            <div className="max-w-200 mx-auto px-6 py-15">
+                <Link
+                    to="/"
+                    className="inline-flex items-center gap-2 text-gray-500 hover:text-gray-800 transition-colors text-sm mb-10"
                 >
-                    <ArrowLeft size={16} />
-                    {lang === 'sr' ? 'nazad' : 'back'}
-                </button>
+                    {t.back}
+                </Link>
 
-                <h1 className="text-4xl md:text-5xl font-black tracking-tight mb-2">{t.title}</h1>
-                <p className="text-sm text-gray-400 mb-12">{t.updated}</p>
+                <h1 className="text-4xl font-bold mb-2">{t.title}</h1>
+                <p className="text-gray-400 text-sm mb-12">{t.updated}</p>
 
-                <p className="text-gray-600 mb-10 leading-relaxed">{t.intro}</p>
+                <p className="text-gray-600 mb-4">{t.intro}</p>
 
-                {t.sections.map((section, index) => (
-                    <div key={index} className="mb-10">
-                        <h2 className="text-xl font-semibold mb-4">{section.title}</h2>
-                        <p className="text-gray-600 mb-4">{section.content}</p>
-                        {section.items.length > 0 && (
-                            <ul className="list-disc list-inside text-gray-600 space-y-2">
-                                {section.items.map((item, i) => (
-                                    <li key={i}>{item}</li>
-                                ))}
-                            </ul>
-                        )}
-                    </div>
-                ))}
+                <h2 className="text-xl font-semibold mt-10 mb-4">{t.servicesTitle}</h2>
+                <p className="text-gray-600 mb-4">{t.servicesIntro}</p>
+                <ul className="ml-6 mb-4 text-gray-600 list-disc">
+                    {t.servicesItems.map((item, i) => (
+                        <li key={i} className="mb-2">{item}</li>
+                    ))}
+                </ul>
+
+                <h2 className="text-xl font-semibold mt-10 mb-4">{t.schedulingTitle}</h2>
+                <p className="text-gray-600 mb-4">{t.schedulingText}</p>
+
+                <h2 className="text-xl font-semibold mt-10 mb-4">{t.paymentTitle}</h2>
+                <p className="text-gray-600 mb-4">{t.paymentText}</p>
+
+                <h2 className="text-xl font-semibold mt-10 mb-4">{t.liabilityTitle}</h2>
+                <p className="text-gray-600 mb-4">{t.liabilityText}</p>
+
+                <h2 className="text-xl font-semibold mt-10 mb-4">{t.ipTitle}</h2>
+                <p className="text-gray-600 mb-4">{t.ipText}</p>
+
+                <h2 className="text-xl font-semibold mt-10 mb-4">{t.changesTitle}</h2>
+                <p className="text-gray-600 mb-4">{t.changesText}</p>
+
+                <h2 className="text-xl font-semibold mt-10 mb-4">{t.contactTitle}</h2>
+                <p className="text-gray-600 mb-4">{t.contactText}</p>
             </div>
-        </section>
+        </div>
     );
 };
 
