@@ -25,13 +25,13 @@ const FAQ = () => {
                 {/* Section Header */}
                 <header className="mb-24">
                     <div className="flex items-center gap-3 mb-4">
-                        <div className="w-8 h-px bg-[#ffce53]" aria-hidden="true"></div>
+                        <div className="w-8 h-px bg-(--color-gold)" aria-hidden="true"></div>
                         <span className="text-xs tracking-[0.3em] text-gray-400">
                             {t.label}
                         </span>
                     </div>
                     <h2 id="faq-heading" className="text-5xl md:text-7xl font-black tracking-tight text-black">
-                        {t.title}<span className="inline-block w-4 h-4 rounded-full bg-[#ffce53] ml-1 align-top" aria-hidden="true"></span>
+                        {t.title}<span className="inline-block w-4 h-4 rounded-full bg-(--color-gold) ml-1 align-top" aria-hidden="true"></span>
                     </h2>
                 </header>
 
@@ -42,7 +42,7 @@ const FAQ = () => {
                             key={index}
                             role="button"
                             tabIndex={0}
-                            className={`group bg-white rounded-lg p-6 cursor-pointer transition-all duration-300 hover:-translate-y-1 hover:shadow-lg ${openIndex === index ? 'ring-1 ring-[#ffce53]' : ''}`}
+                            className={`group bg-white rounded-lg p-6 cursor-pointer transition-all duration-300 hover:-translate-y-1 hover:shadow-lg ${openIndex === index ? 'ring-1 ring-(--color-gold)' : ''}`}
                             onClick={() => toggle(index)}
                             onKeyDown={(e) => handleKeyDown(e, index)}
                             aria-expanded={openIndex === index}
@@ -52,10 +52,10 @@ const FAQ = () => {
                                 <span className="font-bold text-black text-sm md:text-base leading-snug">
                                     {item.question}
                                 </span>
-                                <span className="shrink-0 w-6 h-6 rounded-full bg-[#fff8e1] flex items-center justify-center transition-transform duration-300 border border-[#ffce53]" aria-hidden="true">
+                                <span className="shrink-0 w-6 h-6 rounded-full bg-(--color-gold-light) flex items-center justify-center transition-transform duration-300 border border-(--color-gold)" aria-hidden="true">
                                     {openIndex === index
-                                        ? <EyeOff size={15} className="text-[#c9a227] opacity-70" />
-                                        : <Eye size={15} className="text-[#c9a227] opacity-70" />
+                                        ? <EyeOff size={15} className="text-(--color-gold-dark) opacity-70" />
+                                        : <Eye size={15} className="text-(--color-gold-dark) opacity-70" />
                                     }
                                 </span>
                             </dt>

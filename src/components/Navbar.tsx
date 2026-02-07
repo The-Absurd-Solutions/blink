@@ -94,7 +94,7 @@ const Navbar = ({ lensEnabled, setLensEnabled }: NavbarProps) => {
                         onClick={() => setLensEnabled(!lensEnabled)}
                         className={`flex items-center gap-1.5 text-xs tracking-wider transition-all duration-300 ${lensEnabled
                             ? 'text-gray-400 hover:text-gray-600'
-                            : 'text-[#c9a227] hover:text-[#b08d1f]'
+                            : 'text-(--color-gold-dark) hover:text-(--color-gold-dark)'
                             }`}
                         aria-label={lensEnabled
                             ? (lang === 'sr' ? 'Isključi efekat lupe' : 'Disable lens effect')

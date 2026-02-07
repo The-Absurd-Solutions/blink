@@ -13,13 +13,13 @@ const Services = () => {
                 <header className="mb-24 flex flex-col md:flex-row md:items-end md:justify-between gap-8">
                     <div>
                         <div className="flex items-center gap-3 mb-4">
-                            <div className="w-8 h-px bg-[#ffce53]" aria-hidden="true"></div>
+                            <div className="w-8 h-px bg-(--color-gold)" aria-hidden="true"></div>
                             <span className="text-xs tracking-[0.3em] text-gray-400">
                                 {t.label}
                             </span>
                         </div>
                         <h2 id="services-heading" className="text-5xl md:text-7xl font-black tracking-tight text-black">
-                            {t.title}<span className="inline-block w-4 h-4 rounded-full bg-[#ffce53] ml-1 align-top" aria-hidden="true"></span>
+                            {t.title}<span className="inline-block w-4 h-4 rounded-full bg-(--color-gold) ml-1 align-top" aria-hidden="true"></span>
                         </h2>
                     </div>
                     <p className="text-gray-500 max-w-sm text-sm leading-relaxed">
@@ -55,16 +55,16 @@ const Services = () => {
 
                                 {/* Arrow - Hidden on mobile */}
                                 <div className="hidden md:flex items-center gap-4" aria-hidden="true">
-                                    <div className="w-0 group-hover:w-8 h-px bg-[#ffce53] transition-all duration-300"></div>
+                                    <div className="w-0 group-hover:w-8 h-px bg-(--color-gold) transition-all duration-300"></div>
                                     <ArrowRight
                                         size={20}
-                                        className="text-gray-300 group-hover:text-[#ffce53] transition-all duration-300 transform group-hover:translate-x-1"
+                                        className="text-gray-300 group-hover:text-(--color-gold) transition-all duration-300 transform group-hover:translate-x-1"
                                     />
                                 </div>
                             </article>
 
                             {/* Yellow underline on hover */}
-                            <div className="h-0.5 bg-[#ffce53] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" aria-hidden="true"></div>
+                            <div className="h-0.5 bg-(--color-gold) transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" aria-hidden="true"></div>
                         </li>
                     ))}
                 </ul>

@@ -11,9 +11,9 @@ const ArtisticAccent = ({ align = 'left' }: ArtisticAccentProps) => {
     return (
         <div className={`flex flex-col gap-4 ${isRight ? 'items-end' : ''}`}>
             <div className="flex items-center gap-3">
-                {isRight && <div className="w-2 h-2 rounded-full bg-[#ffce53] animate-pulse"></div>}
-                <div className="w-12 h-0.5 bg-[#ffce53]"></div>
-                {!isRight && <div className="w-2 h-2 rounded-full bg-[#ffce53] animate-pulse"></div>}
+                {isRight && <div className="w-2 h-2 rounded-full bg-(--color-gold) animate-pulse"></div>}
+                <div className="w-12 h-0.5 bg-(--color-gold)"></div>
+                {!isRight && <div className="w-2 h-2 rounded-full bg-(--color-gold) animate-pulse"></div>}
             </div>
             <p className="text-xs tracking-[0.25em] text-gray-400">
                 {isRight

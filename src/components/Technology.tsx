@@ -24,11 +24,11 @@ const Technology = () => {
                 {/* Section Header - consistent with Services */}
                 <header className="mb-24">
                     <div className="flex items-center gap-3 mb-4">
-                        <div className="w-8 h-px bg-[#ffce53]" aria-hidden="true"></div>
+                        <div className="w-8 h-px bg-(--color-gold)" aria-hidden="true"></div>
                         <span className="text-xs tracking-[0.3em] text-gray-400">{t.label}</span>
                     </div>
                     <h2 id="technology-heading" className="text-5xl md:text-7xl font-black tracking-tight text-black">
-                        {t.title}<span className="inline-block w-4 h-4 rounded-full bg-[#ffce53] ml-1 align-top" aria-hidden="true"></span>
+                        {t.title}<span className="inline-block w-4 h-4 rounded-full bg-(--color-gold) ml-1 align-top" aria-hidden="true"></span>
                     </h2>
                 </header>
 
@@ -59,13 +59,13 @@ const Technology = () => {
                                         }`}
                                     style={{ transitionDelay: `${index * 150}ms` }}
                                 >
-                                    <div className="text-2xl md:text-3xl font-bold text-gray-900 tracking-tight mb-2 transition-colors duration-300 group-hover:text-[#c9a227]">
+                                    <div className="text-2xl md:text-3xl font-bold text-gray-900 tracking-tight mb-2 transition-colors duration-300 group-hover:text-(--color-gold-dark)">
                                         {stat.number}
                                     </div>
                                     <div className="text-xs text-gray-600 tracking-widest font-medium">
                                         {stat.label}
                                     </div>
-                                    <div className="w-12 h-px bg-[#ffce53] mx-auto mt-3 transition-all duration-500 group-hover:w-full" aria-hidden="true"></div>
+                                    <div className="w-12 h-px bg-(--color-gold) mx-auto mt-3 transition-all duration-500 group-hover:w-full" aria-hidden="true"></div>
                                 </div>
                             ))}
                         </div>
@@ -89,7 +89,7 @@ const Technology = () => {
                                 />
                             </div>
                             {/* Subtle accent line */}
-                            <div className="absolute -bottom-4 left-0 w-24 h-0.5 bg-[#ffce53]" aria-hidden="true"></div>
+                            <div className="absolute -bottom-4 left-0 w-24 h-0.5 bg-(--color-gold)" aria-hidden="true"></div>
                         </div>
                         <figcaption className="sr-only">
                             {lang === 'sr'

@@ -1,5 +1,14 @@
 @import "tailwindcss";
 
+/* Brand color tokens */
+:root {
+  --color-gold: #ffce53;
+  --color-gold-dark: #c9a227;
+  --color-gold-light: #fff8e1;
+  --color-bg: #f3f4f6;
+  --color-bg-alt: #e5e7eb;
+}
+
 /* Base styles */
 html {
   scroll-behavior: smooth;
@@ -7,7 +16,7 @@ html {
 
 body {
   font-family: 'Outfit', sans-serif;
-  background-color: #f3f4f6;
+  background-color: var(--color-bg);
 }
 
 /* Skip to content link for accessibility */
@@ -49,7 +58,7 @@ body {
   left: 50%;
   width: 0;
   height: 2px;
-  background-color: #ffce53;
+  background-color: var(--color-gold);
   transition: all 0.3s ease;
   transform: translateX(-50%);
 }
@@ -85,13 +94,13 @@ img {
 /* Hero image placeholder - prevents CLS */
 .hero-image-wrapper {
   aspect-ratio: 3 / 4;
-  background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
+  background: linear-gradient(135deg, var(--color-bg) 0%, var(--color-bg-alt) 100%);
 }
 
 /* Technology image placeholder */
 .tech-image-wrapper {
   aspect-ratio: 4 / 3;
-  background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
+  background: linear-gradient(135deg, var(--color-bg) 0%, var(--color-bg-alt) 100%);
 }
 
 /* Font fallback to prevent FOIT/FOUT */
@@ -125,7 +134,7 @@ section {
 
 /* Focus visible for keyboard navigation */
 :focus-visible {
-  outline: 2px solid #ffce53;
+  outline: 2px solid var(--color-gold);
   outline-offset: 2px;
 }
 

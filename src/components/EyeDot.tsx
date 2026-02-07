@@ -24,7 +24,7 @@ const EyeDot = () => {
 
     return (
         <span
-            className="inline-block w-[0.15em] h-[0.15em] rounded-full bg-[#ffce53] eye-dot align-middle ml-[-0.05em]"
+            className="inline-block w-[0.15em] h-[0.15em] rounded-full bg-(--color-gold) eye-dot align-middle ml-[-0.05em]"
             style={{ transform: `translate(${offset.x}px, ${offset.y}px)` }}
         />
     );

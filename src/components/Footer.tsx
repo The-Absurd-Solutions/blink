@@ -29,7 +29,7 @@ const Footer = () => {
                     {/* Logo & tagline */}
                     <div className="lg:max-w-sm relative z-60" style={{ isolation: 'isolate' }}>
                         <h3 className="text-4xl font-black tracking-tight mb-3 text-black">
-                            Blink<span className="inline-block w-2 h-2 rounded-full bg-[#ffce53] ml-0.5 align-middle"></span>
+                            Blink<span className="inline-block w-2 h-2 rounded-full bg-(--color-gold) ml-0.5 align-middle"></span>
                         </h3>
                         <p className="text-gray-500 text-sm leading-relaxed">
                             {t.tagline}
@@ -114,7 +114,7 @@ const Footer = () => {
                         <Link to="/privacy" className="text-gray-400 hover:text-black transition-colors">{t.privacy}</Link>
                         <span className="text-gray-300">|</span>
                         <Link to="/terms" className="text-gray-400 hover:text-black transition-colors">{t.terms}</Link>
-                        <span className="w-1 h-1 rounded-full bg-[#ffce53]"></span>
+                        <span className="w-1 h-1 rounded-full bg-(--color-gold)"></span>
                         <span className="text-gray-400">{t.location}</span>
                     </div>
                 </div>

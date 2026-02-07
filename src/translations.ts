@@ -133,34 +133,34 @@ export const translations: Record<'sr' | 'en', Translation> = {
             cta: "zakažite pregled"
         },
         hero: {
-            clinic: "Oftalmološka ordinacija",
-            left: "Spoj vrhunske tehnologije i medicinske ekspertize. Posvećeni smo očuvanju i unapređenju vašeg vida kroz individualizovan pristup i preciznu dijagnostiku.",
-            right: "Vid nije samo čulo, već način na koji doživljavate svet. Otkrijte novu dimenziju jasnoće uz standarde nege koji ne prave kompromise."
+            clinic: "Oftalmološka ordinacija Novi Pazar",
+            left: "Spoj vrhunske tehnologije i medicinske ekspertize. Posvećeni smo očuvanju i unapređenju vašeg vida kroz individualizovan pristup i preciznu dijagnostiku u srcu Novog Pazara.",
+            right: "Vid nije samo čulo, već način na koji doživljavate svet. Otkrijte novu dimenziju jasnoće kod vašeg oftalmologa uz standarde nege koji ne prave kompromise."
         },
         services: {
             label: "Šta radimo",
             title: "Usluge",
-            description: "Pružamo kompletnu oftalmološku dijagnostiku uz najsavremeniju opremu i individualan pristup svakom pacijentu.",
+            description: "Pružamo kompletnu oftalmološku dijagnostiku u Novom Pazaru uz najsavremeniju opremu i individualan pristup svakom pacijentu.",
             items: [
                 {
                     number: '01',
                     title: 'Kompjutersko određivanje dioptrije',
-                    description: 'Najsavremenija tehnologija za savršen vid.'
+                    description: 'Najsavremenija tehnologija za precizno merenje i korekciju vida.'
                 },
                 {
                     number: '02',
                     title: 'Pregled očnog dna',
-                    description: 'Prevencija i rana dijagnostika.'
+                    description: 'Prevencija i rana dijagnostika očnih bolesti.'
                 },
                 {
                     number: '03',
                     title: 'Merenje očnog pritiska',
-                    description: 'Bezbolna metoda za prevenciju glaukoma.'
+                    description: 'Bezbolna metoda za prevenciju i otkrivanje glaukoma.'
                 },
                 {
                     number: '04',
                     title: 'Kontaktna sočiva',
-                    description: 'Profesionalno savetovanje i obuka.'
+                    description: 'Profesionalno savetovanje, prilagođavanje i obuka za nošenje.'
                 }
             ]
         },
@@ -212,7 +212,7 @@ export const translations: Record<'sr' | 'en', Translation> = {
             address: "Lug 32, Novi Pazar",
             phone: "+381 62 572 222",
             hours: "Pon–Pet: 08–20h | Sub: 09–14h",
-            tagline: "Oftalmološka ordinacija posvećena očuvanju i unapređenju vašeg vida.",
+            tagline: "Oftalmološka ordinacija u Novom Pazaru posvećena očuvanju i unapređenju vašeg vida.",
             copyright: "© 2026 Blink Oftalmološka ordinacija. Sva prava zadržana.",
             location: "Novi Pazar, Srbija",
             privacy: "politika privatnosti",
@@ -293,34 +293,34 @@ export const translations: Record<'sr' | 'en', Translation> = {
             cta: "book appointment"
         },
         hero: {
-            clinic: "Eye Clinic",
-            left: "A blend of cutting-edge technology and medical expertise. We are dedicated to preserving and enhancing your vision through a personalized approach and precise diagnostics.",
-            right: "Vision is not just a sense, but the way you experience the world. Discover a new dimension of clarity with care standards that make no compromises."
+            clinic: "Eye Clinic Novi Pazar",
+            left: "A blend of cutting-edge technology and medical expertise. We are dedicated to preserving and enhancing your vision through a personalized approach and precise diagnostics in the heart of Novi Pazar.",
+            right: "Vision is not just a sense, but the way you experience the world. Discover a new dimension of clarity with your ophthalmologist, with care standards that make no compromises."
         },
         services: {
             label: "What we do",
             title: "Services",
-            description: "We provide complete ophthalmic diagnostics with state-of-the-art equipment and an individual approach to each patient.",
+            description: "We provide complete ophthalmic diagnostics in Novi Pazar with state-of-the-art equipment and an individual approach to each patient.",
             items: [
                 {
                     number: '01',
                     title: 'Computer Vision Testing',
-                    description: 'State-of-the-art technology for perfect vision.'
+                    description: 'State-of-the-art technology for precise measurement and vision correction.'
                 },
                 {
                     number: '02',
                     title: 'Fundus Examination',
-                    description: 'Prevention and early diagnostics.'
+                    description: 'Prevention and early diagnostics of eye diseases.'
                 },
                 {
                     number: '03',
                     title: 'Eye Pressure Measurement',
-                    description: 'Painless method for glaucoma prevention.'
+                    description: 'Painless method for glaucoma prevention and detection.'
                 },
                 {
                     number: '04',
                     title: 'Contact Lenses',
-                    description: 'Professional consultation and training.'
+                    description: 'Professional consultation, fitting and training.'
                 }
             ]
         },
@@ -372,7 +372,7 @@ export const translations: Record<'sr' | 'en', Translation> = {
             address: "Lug 32, Novi Pazar",
             phone: "+381 62 572 222",
             hours: "Mon–Fri: 08–20h | Sat: 09–14h",
-            tagline: "Eye clinic dedicated to preserving and enhancing your vision.",
+            tagline: "Eye clinic in Novi Pazar dedicated to preserving and enhancing your vision.",
             copyright: "© 2026 Blink Eye Clinic. All rights reserved.",
             location: "Novi Pazar, Serbia",
             privacy: "privacy policy",

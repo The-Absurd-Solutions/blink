@@ -15,7 +15,7 @@
     <image:image>
       <image:loc>https://blink.rs/hero.png</image:loc>
       <image:title>Blink Oftalmološka ordinacija - Moderna dijagnostika vida</image:title>
-      <image:caption>Moderna oftalmološka oprema u Blink ordinaciji za preciznu dijagnostiku vida u Beogradu</image:caption>
+      <image:caption>Moderna oftalmološka oprema u Blink ordinaciji za preciznu dijagnostiku vida u Novom Pazaru</image:caption>
     </image:image>
     <image:image>
       <image:loc>https://blink.rs/tehnologija.jpg</image:loc>
@@ -70,5 +70,25 @@
     <lastmod>2026-02-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+
+  <!-- Privacy Policy -->
+  <url>
+    <loc>https://blink.rs/privacy</loc>
+    <lastmod>2026-02-05</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="sr" href="https://blink.rs/privacy"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://blink.rs/privacy?lang=en"/>
+  </url>
+
+  <!-- Terms of Service -->
+  <url>
+    <loc>https://blink.rs/terms</loc>
+    <lastmod>2026-02-05</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="sr" href="https://blink.rs/terms"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://blink.rs/terms?lang=en"/>
   </url>
 </urlset>

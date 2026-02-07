@@ -12,7 +12,7 @@ const Booking = () => {
                 <header className="mb-24 flex flex-col md:flex-row md:items-end md:justify-between gap-8">
                     <div>
                         <div className="flex items-center gap-3 mb-4">
-                            <div className="w-8 h-px bg-[#ffce53]" aria-hidden="true"></div>
+                            <div className="w-8 h-px bg-(--color-gold)" aria-hidden="true"></div>
                             <span className="text-xs tracking-[0.3em] text-gray-400">
                                 {t.label}
                             </span>
@@ -20,7 +20,7 @@ const Booking = () => {
                         <h2 id="booking-heading" className="text-5xl md:text-7xl font-black tracking-tight text-black">
                             {lang === 'sr' ? 'Zakažite ' : 'Book '}
                             <span className="whitespace-nowrap">
-                                {lang === 'sr' ? 'pregled' : 'appointment'}<span className="inline-block w-4 h-4 rounded-full bg-[#ffce53] ml-1 align-top" aria-hidden="true"></span>
+                                {lang === 'sr' ? 'pregled' : 'appointment'}<span className="inline-block w-4 h-4 rounded-full bg-(--color-gold) ml-1 align-top" aria-hidden="true"></span>
                             </span>
                         </h2>
                     </div>
@@ -38,7 +38,7 @@ const Booking = () => {
                         </p>
                         <a
                             href="tel:+38162572222"
-                            className="text-xl font-bold text-gray-900 group-hover:text-[#c9a227] transition-colors"
+                            className="text-xl font-bold text-gray-900 group-hover:text-(--color-gold-dark) transition-colors"
                         >
                             +381 62 572 222
                         </a>
@@ -49,7 +49,7 @@ const Booking = () => {
                         <p className="text-[10px] tracking-[0.15em] text-gray-400 mb-2 uppercase">email</p>
                         <a
                             href="mailto:drmemicenisa@gmail.com"
-                            className="text-xl font-bold text-gray-900 group-hover:text-[#c9a227] transition-colors break-all"
+                            className="text-xl font-bold text-gray-900 group-hover:text-(--color-gold-dark) transition-colors break-all"
                         >
                             drmemicenisa@gmail.com
                         </a>
@@ -64,7 +64,7 @@ const Booking = () => {
                             href="https://maps.google.com/?q=Lug+32+Novi+Pazar"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="text-xl font-bold text-gray-900 group-hover:text-[#c9a227] transition-colors"
+                            className="text-xl font-bold text-gray-900 group-hover:text-(--color-gold-dark) transition-colors"
                         >
                             Lug 32, Novi Pazar
                         </a>
@@ -77,14 +77,14 @@ const Booking = () => {
                         </p>
                         <div className="flex flex-col sm:flex-row gap-3 sm:gap-6">
                             <div className="flex items-center gap-2">
-                                <span className="w-1.5 h-1.5 rounded-full bg-[#ffce53] shrink-0"></span>
+                                <span className="w-1.5 h-1.5 rounded-full bg-(--color-gold) shrink-0"></span>
                                 <span className="text-xs text-gray-400 whitespace-nowrap">
                                     {lang === 'sr' ? 'pon–pet' : 'mon–fri'}
                                 </span>
                                 <span className="text-sm font-medium whitespace-nowrap">08–20h</span>
                             </div>
                             <div className="flex items-center gap-2">
-                                <span className="w-1.5 h-1.5 rounded-full bg-[#ffce53] shrink-0"></span>
+                                <span className="w-1.5 h-1.5 rounded-full bg-(--color-gold) shrink-0"></span>
                                 <span className="text-xs text-gray-400 whitespace-nowrap">
                                     {lang === 'sr' ? 'sub' : 'sat'}
                                 </span>

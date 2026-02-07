@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { translations } from '../translations';
 import { useLanguage } from '../context/LanguageContext';
 import Navbar from './Navbar';
@@ -7,9 +6,13 @@ import HeroImage from './HeroImage';
 import ArtisticAccent from './ArtisticAccent';
 import MouseGlow from './MouseGlow';
 
-const Hero = () => {
+interface HeroProps {
+    lensEnabled: boolean;
+    setLensEnabled: (enabled: boolean) => void;
+}
+
+const Hero = ({ lensEnabled, setLensEnabled }: HeroProps) => {
     const { lang } = useLanguage();
-    const [lensEnabled, setLensEnabled] = useState(true);
     const t = translations[lang].hero;
 
     return (
@@ -17,7 +20,7 @@ const Hero = () => {
             <MouseGlow isEnabled={lensEnabled} />
             <Navbar lensEnabled={lensEnabled} setLensEnabled={setLensEnabled} />
 
-            <main id="main-content" className="grow flex flex-col relative w-full max-w-400 mx-auto px-4 md:px-8 pt-6 pb-8 justify-center">
+            <div className="grow flex flex-col relative w-full max-w-400 mx-auto px-4 md:px-8 pt-6 pb-8 justify-center">
 
                 {/* Giant Title */}
                 <div className="w-full text-center relative z-60 mb-4 md:mb-8" style={{ isolation: 'isolate' }}>
@@ -26,6 +29,11 @@ const Hero = () => {
                     </p>
                     <h1 className="text-giant font-black text-black tracking-tighter select-none">
                         Blink<EyeDot />
+                        <span className="sr-only">
+                            {lang === 'sr'
+                                ? ' — Oftalmološka ordinacija Novi Pazar | Očni pregled, dioptrija, okulista'
+                                : ' — Eye Clinic Novi Pazar | Eye exam, vision diagnostics, ophthalmologist'}
+                        </span>
                     </h1>
                 </div>
 
@@ -54,7 +62,7 @@ const Hero = () => {
                     </div>
 
                 </div>
-            </main>
+            </div>
         </header>
     );
 };
