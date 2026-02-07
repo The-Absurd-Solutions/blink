@@ -5,11 +5,11 @@ import { useLanguage } from './context/LanguageContext';
 import ErrorBoundary from './components/ErrorBoundary';
 import Hero from './components/Hero';
 import Services from './components/Services';
+import Technology from './components/Technology';
+import FAQ from './components/FAQ';
+import Booking from './components/Booking';
+import Footer from './components/Footer';
 
-const Technology = lazy(() => import('./components/Technology'));
-const FAQ = lazy(() => import('./components/FAQ'));
-const Booking = lazy(() => import('./components/Booking'));
-const Footer = lazy(() => import('./components/Footer'));
 const Privacy = lazy(() => import('./components/Privacy'));
 const Terms = lazy(() => import('./components/Terms'));
 
@@ -80,15 +80,11 @@ function HomePage() {
       <Hero lensEnabled={lensEnabled} setLensEnabled={setLensEnabled} />
       <main id="main-content">
         <Services />
-        <Suspense>
-          <Technology />
-          <FAQ />
-          <Booking />
-        </Suspense>
+        <Technology />
+        <FAQ />
+        <Booking />
       </main>
-      <Suspense>
-        <Footer />
-      </Suspense>
+      <Footer />
     </div>
   );
 }
