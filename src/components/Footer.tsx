@@ -1,6 +1,16 @@
+import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { translations } from '../translations';
 import { useLanguage } from '../context/LanguageContext';
+
+function useNanumFont() {
+    useEffect(() => {
+        const link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.href = 'https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap';
+        document.head.appendChild(link);
+    }, []);
+}
 
 const InstagramIcon = () => (
     <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -15,6 +25,7 @@ const FacebookIcon = () => (
 );
 
 const Footer = () => {
+    useNanumFont();
     const { lang } = useLanguage();
     const t = translations[lang].footer;
     const nav = translations[lang].nav;

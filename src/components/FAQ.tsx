@@ -12,13 +12,6 @@ const FAQ = () => {
         setOpenIndex(openIndex === index ? null : index);
     };
 
-    const handleKeyDown = (e: React.KeyboardEvent, index: number) => {
-        if (e.key === 'Enter' || e.key === ' ') {
-            e.preventDefault();
-            toggle(index);
-        }
-    };
-
     return (
         <section id="faq" className="py-24 px-4 md:px-8 bg-gray-50" aria-labelledby="faq-heading">
             <div className="max-w-350 mx-auto">
@@ -40,24 +33,26 @@ const FAQ = () => {
                     {t.items.map((item, index) => (
                         <div
                             key={index}
-                            role="button"
-                            tabIndex={0}
-                            className={`group bg-white rounded-lg p-6 cursor-pointer transition-all duration-300 hover:-translate-y-1 hover:shadow-lg ${openIndex === index ? 'ring-1 ring-(--color-gold)' : ''}`}
-                            onClick={() => toggle(index)}
-                            onKeyDown={(e) => handleKeyDown(e, index)}
-                            aria-expanded={openIndex === index}
-                            aria-controls={`faq-answer-${index}`}
+                            className={`group bg-white rounded-lg p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg ${openIndex === index ? 'ring-1 ring-(--color-gold)' : ''}`}
                         >
-                            <dt className="flex items-start justify-between gap-4">
-                                <span className="font-bold text-black text-sm md:text-base leading-snug">
-                                    {item.question}
-                                </span>
-                                <span className="shrink-0 w-6 h-6 rounded-full bg-(--color-gold-light) flex items-center justify-center transition-transform duration-300 border border-(--color-gold)" aria-hidden="true">
-                                    {openIndex === index
-                                        ? <EyeOff size={15} className="text-(--color-gold-dark) opacity-70" />
-                                        : <Eye size={15} className="text-(--color-gold-dark) opacity-70" />
-                                    }
-                                </span>
+                            <dt>
+                                <button
+                                    type="button"
+                                    className="flex items-start justify-between gap-4 cursor-pointer w-full text-left"
+                                    onClick={() => toggle(index)}
+                                    aria-expanded={openIndex === index}
+                                    aria-controls={`faq-answer-${index}`}
+                                >
+                                    <span className="font-bold text-black text-sm md:text-base leading-snug">
+                                        {item.question}
+                                    </span>
+                                    <span className="shrink-0 w-6 h-6 rounded-full bg-(--color-gold-light) flex items-center justify-center transition-transform duration-300 border border-(--color-gold)" aria-hidden="true">
+                                        {openIndex === index
+                                            ? <EyeOff size={15} className="text-(--color-gold-dark) opacity-70" />
+                                            : <Eye size={15} className="text-(--color-gold-dark) opacity-70" />
+                                        }
+                                    </span>
+                                </button>
                             </dt>
                             <dd
                                 id={`faq-answer-${index}`}

@@ -1,16 +1,17 @@
-import { useState, useEffect, type ReactNode } from 'react';
+import { useState, useEffect, lazy, Suspense, type ReactNode } from 'react';
 import { Routes, Route, Link } from 'react-router-dom';
 import { LanguageContext } from './context/LanguageContext';
 import { useLanguage } from './context/LanguageContext';
 import ErrorBoundary from './components/ErrorBoundary';
 import Hero from './components/Hero';
 import Services from './components/Services';
-import Technology from './components/Technology';
-import FAQ from './components/FAQ';
-import Booking from './components/Booking';
-import Footer from './components/Footer';
-import Privacy from './components/Privacy';
-import Terms from './components/Terms';
+
+const Technology = lazy(() => import('./components/Technology'));
+const FAQ = lazy(() => import('./components/FAQ'));
+const Booking = lazy(() => import('./components/Booking'));
+const Footer = lazy(() => import('./components/Footer'));
+const Privacy = lazy(() => import('./components/Privacy'));
+const Terms = lazy(() => import('./components/Terms'));
 
 function getInitialLang(): 'sr' | 'en' {
   const params = new URLSearchParams(window.location.search);
@@ -79,11 +80,15 @@ function HomePage() {
       <Hero lensEnabled={lensEnabled} setLensEnabled={setLensEnabled} />
       <main id="main-content">
         <Services />
-        <Technology />
-        <FAQ />
-        <Booking />
+        <Suspense>
+          <Technology />
+          <FAQ />
+          <Booking />
+        </Suspense>
       </main>
-      <Footer />
+      <Suspense>
+        <Footer />
+      </Suspense>
     </div>
   );
 }
@@ -126,8 +131,8 @@ export default function App() {
       <LanguageContext.Provider value={{ lang, setLang }}>
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/privacy" element={<PageLayout><Privacy /></PageLayout>} />
-          <Route path="/terms" element={<PageLayout><Terms /></PageLayout>} />
+          <Route path="/privacy" element={<Suspense><PageLayout><Privacy /></PageLayout></Suspense>} />
+          <Route path="/terms" element={<Suspense><PageLayout><Terms /></PageLayout></Suspense>} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </LanguageContext.Provider>

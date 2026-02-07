@@ -73,16 +73,16 @@ const Navbar = ({ lensEnabled, setLensEnabled }: NavbarProps) => {
 
                     {/* Language Switcher */}
                     <div className="w-px h-4 bg-gray-300 mx-2"></div>
-                    <div className="flex gap-2">
+                    <div className="flex gap-0">
                         <button
                             onClick={() => setLang('sr')}
-                            className={`hover:text-black transition-colors ${lang === 'sr' ? 'text-black font-bold' : 'text-gray-400'}`}
+                            className={`px-2 py-3 min-w-11 min-h-11 flex items-center justify-center hover:text-black transition-colors ${lang === 'sr' ? 'text-black font-bold' : 'text-gray-400'}`}
                         >
                             sr
                         </button>
                         <button
                             onClick={() => setLang('en')}
-                            className={`hover:text-black transition-colors ${lang === 'en' ? 'text-black font-bold' : 'text-gray-400'}`}
+                            className={`px-2 py-3 min-w-11 min-h-11 flex items-center justify-center hover:text-black transition-colors ${lang === 'en' ? 'text-black font-bold' : 'text-gray-400'}`}
                         >
                             en
                         </button>
@@ -154,16 +154,16 @@ const Navbar = ({ lensEnabled, setLensEnabled }: NavbarProps) => {
                     </div>
 
                     {/* Language Switcher */}
-                    <div className="flex gap-4 mt-8 pt-6 border-t border-gray-200">
+                    <div className="flex gap-0 mt-8 pt-6 border-t border-gray-200">
                         <button
                             onClick={() => setLang('sr')}
-                            className={`text-sm font-medium transition-colors ${lang === 'sr' ? 'text-black font-bold' : 'text-gray-400'}`}
+                            className={`px-3 py-3 min-w-11 min-h-11 flex items-center justify-center text-sm font-medium transition-colors ${lang === 'sr' ? 'text-black font-bold' : 'text-gray-400'}`}
                         >
                             sr
                         </button>
                         <button
                             onClick={() => setLang('en')}
-                            className={`text-sm font-medium transition-colors ${lang === 'en' ? 'text-black font-bold' : 'text-gray-400'}`}
+                            className={`px-3 py-3 min-w-11 min-h-11 flex items-center justify-center text-sm font-medium transition-colors ${lang === 'en' ? 'text-black font-bold' : 'text-gray-400'}`}
                         >
                             en
                         </button>
