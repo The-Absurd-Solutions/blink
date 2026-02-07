@@ -1,4 +1,5 @@
 
+import { useState, useEffect, useRef } from 'react';
 import { translations } from '../translations';
 
 interface TechnologyProps {
@@ -7,10 +8,21 @@ interface TechnologyProps {
 
 const Technology = ({ lang }: TechnologyProps) => {
     const t = translations[lang].technology;
+    const [visible, setVisible] = useState(false);
+    const sectionRef = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            ([entry]) => { if (entry.isIntersecting) setVisible(true); },
+            { threshold: 0.3 }
+        );
+        if (sectionRef.current) observer.observe(sectionRef.current);
+        return () => observer.disconnect();
+    }, []);
 
     return (
-        <section id="technology" className="py-24 px-4 md:px-8 bg-gray-50" aria-labelledby="technology-heading">
-            <div className="max-w-[1400px] mx-auto">
+        <section id="technology" className="relative py-24 px-4 md:px-8 bg-gray-50" aria-labelledby="technology-heading">
+            <div className="relative max-w-[1400px] mx-auto">
 
                 {/* Section Header - consistent with Services */}
                 <header className="mb-24">
@@ -19,7 +31,7 @@ const Technology = ({ lang }: TechnologyProps) => {
                         <span className="text-xs tracking-[0.3em] text-gray-400">{t.label}</span>
                     </div>
                     <h2 id="technology-heading" className="text-5xl md:text-7xl font-black tracking-tight text-black">
-                        {t.title}<span className="inline-block w-2 h-2 rounded-full bg-[#ffce53] ml-1 align-top" aria-hidden="true"></span>
+                        {t.title}<span className="inline-block w-4 h-4 rounded-full bg-[#ffce53] ml-1 align-top" aria-hidden="true"></span>
                     </h2>
                 </header>
 
@@ -35,16 +47,28 @@ const Technology = ({ lang }: TechnologyProps) => {
                             {t.text}
                         </p>
 
-                        {/* Stats - elegant horizontal layout */}
-                        <div className="flex gap-12 pt-8 border-t border-gray-200">
+                        {/* Stats - glassmorphism cards */}
+                        <div ref={sectionRef} className="flex flex-wrap gap-4 md:gap-6 pt-8 border-t border-gray-200">
                             {t.stats.map((stat, index) => (
-                                <div key={index} className="group">
-                                    <div className="text-2xl md:text-3xl font-light text-black mb-1 tracking-tight">
+                                <div
+                                    key={index}
+                                    className={`group relative px-6 py-5
+                                        transition-all duration-700 ease-out
+                                        min-w-[120px] text-center cursor-default
+                                        hover:-translate-y-1
+                                        ${visible
+                                            ? 'opacity-100 translate-y-0'
+                                            : 'opacity-0 translate-y-6'
+                                        }`}
+                                    style={{ transitionDelay: `${index * 150}ms` }}
+                                >
+                                    <div className="text-2xl md:text-3xl font-bold text-gray-900 tracking-tight mb-2 transition-colors duration-300 group-hover:text-[#c9a227]">
                                         {stat.number}
                                     </div>
-                                    <div className="text-xs text-gray-400 tracking-widest">
+                                    <div className="text-xs text-gray-600 tracking-widest font-medium">
                                         {stat.label}
                                     </div>
+                                    <div className="w-12 h-[1px] bg-[#ffce53] mx-auto mt-3 transition-all duration-500 group-hover:w-full" aria-hidden="true"></div>
                                 </div>
                             ))}
                         </div>

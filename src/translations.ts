@@ -76,6 +76,11 @@ export const translations = {
                 }
             ]
         },
+        booking: {
+            label: "kontakt",
+            title: "Zakažite pregled",
+            description: "Vaš vid zaslužuje pažnju. Javite nam se i zakažite termin."
+        },
         footer: {
             ready: "Spremni?",
             ctaTitle: "Zakažite pregled danas",
@@ -169,6 +174,11 @@ export const translations = {
                     answer: 'For most examinations, no special preparation is needed. If you plan to have your pupils dilated, we recommend bringing someone with you as your vision will be blurry for a few hours.'
                 }
             ]
+        },
+        booking: {
+            label: "contact",
+            title: "Book appointment",
+            description: "Your vision deserves attention. Contact us and schedule your appointment."
         },
         footer: {
             ready: "Ready?",

@@ -3,6 +3,7 @@ import Hero from './components/Hero';
 import Services from './components/Services';
 import Technology from './components/Technology';
 import FAQ from './components/FAQ';
+import Booking from './components/Booking';
 import Footer from './components/Footer';
 
 export default function App() {
@@ -35,6 +36,7 @@ export default function App() {
       <Services lang={lang} />
       <Technology lang={lang} />
       <FAQ lang={lang} />
+      <Booking lang={lang} />
       <Footer lang={lang} />
     </div>
   );

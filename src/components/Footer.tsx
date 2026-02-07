@@ -1,4 +1,4 @@
-import { Instagram, Facebook, Phone, Mail, Clock } from 'lucide-react';
+import { Instagram, Facebook } from 'lucide-react';
 import { translations } from '../translations';
 
 interface FooterProps {
@@ -10,95 +10,7 @@ const Footer = ({ lang }: FooterProps) => {
     const nav = translations[lang].nav;
 
     return (
-        <>
-            {/* CTA Section */}
-            <section className="py-28 px-4 md:px-8 bg-gray-50">
-                <div className="max-w-[1400px] mx-auto">
-                    {/* Title */}
-                    <div className="text-center mb-16">
-                        <div className="flex items-center justify-center gap-3 mb-6">
-                            <div className="w-12 h-px bg-[#ffce53]"></div>
-                            <span className="text-xs tracking-[0.3em] text-gray-400">
-                                {t.ready}
-                            </span>
-                            <div className="w-12 h-px bg-[#ffce53]"></div>
-                        </div>
-                        <h2 className="text-5xl md:text-7xl font-black text-black tracking-tight leading-none">
-                            {t.ctaTitle}<span className="inline-block w-3 h-3 rounded-full bg-[#ffce53] ml-2 align-top"></span>
-                        </h2>
-                    </div>
-
-                    {/* Contact Row */}
-                    <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8 max-w-5xl mx-auto">
-                        {/* Phone */}
-                        <a
-                            href="tel:+38162572222"
-                            className="group flex items-center gap-4 bg-white rounded-2xl px-8 py-5 hover:bg-gray-50 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 w-full md:w-auto"
-                        >
-                            <div className="w-12 h-12 rounded-full bg-gray-100 group-hover:bg-[#ffce53]/20 flex items-center justify-center transition-colors">
-                                <Phone size={20} className="text-[#c9a227]" />
-                            </div>
-                            <div>
-                                <p className="text-[10px] tracking-[0.2em] text-gray-400 uppercase">
-                                    {lang === 'sr' ? 'telefon' : 'phone'}
-                                </p>
-                                <p className="text-lg font-medium text-gray-700 group-hover:text-black transition-colors">
-                                    +381 62 572 222
-                                </p>
-                            </div>
-                        </a>
-
-                        {/* Divider */}
-                        <div className="hidden md:block w-px h-12 bg-gray-200"></div>
-
-                        {/* Email */}
-                        <a
-                            href="mailto:drmemicenisa@gmail.com"
-                            className="group flex items-center gap-4 bg-white rounded-2xl px-8 py-5 hover:bg-gray-50 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 w-full md:w-auto"
-                        >
-                            <div className="w-12 h-12 rounded-full bg-gray-100 group-hover:bg-[#ffce53]/20 flex items-center justify-center transition-colors">
-                                <Mail size={20} className="text-[#c9a227]" />
-                            </div>
-                            <div>
-                                <p className="text-[10px] tracking-[0.2em] text-gray-400 uppercase">
-                                    email
-                                </p>
-                                <p className="text-lg font-medium text-gray-700 group-hover:text-black transition-colors">
-                                    drmemicenisa@gmail.com
-                                </p>
-                            </div>
-                        </a>
-
-                        {/* Divider */}
-                        <div className="hidden md:block w-px h-12 bg-gray-200"></div>
-
-                        {/* Hours */}
-                        <div className="flex items-center gap-4 bg-white rounded-2xl px-8 py-5 w-full md:w-auto">
-                            <div className="w-12 h-12 rounded-full bg-gray-100 flex items-center justify-center shrink-0">
-                                <Clock size={20} className="text-[#c9a227]" />
-                            </div>
-                            <div>
-                                <p className="text-[10px] tracking-[0.2em] text-gray-400 uppercase mb-2">
-                                    {lang === 'sr' ? 'radno vrijeme' : 'hours'}
-                                </p>
-                                <div className="space-y-1">
-                                    <div className="flex items-center gap-3 text-sm">
-                                        <span className="text-gray-400 w-16">{lang === 'sr' ? 'pon–pet' : 'mon–fri'}</span>
-                                        <span className="font-medium text-gray-700">08–20h</span>
-                                    </div>
-                                    <div className="flex items-center gap-3 text-sm">
-                                        <span className="text-gray-400 w-16">{lang === 'sr' ? 'sub' : 'sat'}</span>
-                                        <span className="font-medium text-gray-700">09–14h</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            {/* Footer */}
-            <footer id="contact" className="border-t border-gray-200 pt-20 pb-8 px-4 md:px-8 bg-gray-50" role="contentinfo">
+            <footer className="border-t border-gray-200 pt-20 pb-8 px-4 md:px-8 bg-gray-50" role="contentinfo">
                 <div className="max-w-[1400px] mx-auto">
 
                     {/* Top section */}
@@ -214,7 +126,6 @@ const Footer = ({ lang }: FooterProps) => {
                     </div>
                 </div>
             </footer>
-        </>
     );
 };
 

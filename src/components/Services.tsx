@@ -9,8 +9,8 @@ const Services = ({ lang }: ServicesProps) => {
     const t = translations[lang].services;
 
     return (
-        <section id="services" className="py-24 px-4 md:px-8 bg-gray-50 overflow-hidden" aria-labelledby="services-heading">
-            <div className="max-w-[1400px] mx-auto">
+        <section id="services" className="relative py-24 px-4 md:px-8 bg-gray-50 overflow-hidden" aria-labelledby="services-heading">
+            <div className="relative max-w-[1400px] mx-auto">
                 {/* Section Header */}
                 <header className="mb-24 flex flex-col md:flex-row md:items-end md:justify-between gap-8">
                     <div>
@@ -21,7 +21,7 @@ const Services = ({ lang }: ServicesProps) => {
                             </span>
                         </div>
                         <h2 id="services-heading" className="text-5xl md:text-7xl font-black tracking-tight text-black">
-                            {t.title}<span className="inline-block w-2 h-2 rounded-full bg-[#ffce53] ml-1 align-top" aria-hidden="true"></span>
+                            {t.title}<span className="inline-block w-4 h-4 rounded-full bg-[#ffce53] ml-1 align-top" aria-hidden="true"></span>
                         </h2>
                     </div>
                     <p className="text-gray-500 max-w-sm text-sm leading-relaxed">
