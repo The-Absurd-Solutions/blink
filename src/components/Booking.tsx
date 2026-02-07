@@ -81,14 +81,14 @@ const Booking = () => {
                                 <span className="text-xs text-gray-400 whitespace-nowrap">
                                     {lang === 'sr' ? 'pon–pet' : 'mon–fri'}
                                 </span>
-                                <span className="text-sm font-medium whitespace-nowrap">08–20h</span>
+                                <span className="text-sm font-medium whitespace-nowrap">16–20h</span>
                             </div>
                             <div className="flex items-center gap-2">
                                 <span className="w-1.5 h-1.5 rounded-full bg-(--color-gold) shrink-0"></span>
                                 <span className="text-xs text-gray-400 whitespace-nowrap">
                                     {lang === 'sr' ? 'sub' : 'sat'}
                                 </span>
-                                <span className="text-sm font-medium whitespace-nowrap">09–14h</span>
+                                <span className="text-sm font-medium whitespace-nowrap">10–14h</span>
                             </div>
                         </div>
                     </div>
