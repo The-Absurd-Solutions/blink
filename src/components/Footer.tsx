@@ -1,15 +1,31 @@
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { translations } from '../translations';
 import { useLanguage } from '../context/LanguageContext';
 
-function useNanumFont() {
+function useLazyNanumFont(ref: React.RefObject<HTMLElement | null>) {
     useEffect(() => {
-        const link = document.createElement('link');
-        link.rel = 'stylesheet';
-        link.href = 'https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap';
-        document.head.appendChild(link);
-    }, []);
+        const el = ref.current;
+        if (!el) return;
+
+        let loaded = false;
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting && !loaded) {
+                    loaded = true;
+                    const link = document.createElement('link');
+                    link.rel = 'stylesheet';
+                    link.href = 'https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap';
+                    document.head.appendChild(link);
+                    observer.disconnect();
+                }
+            },
+            { rootMargin: '200px' }
+        );
+
+        observer.observe(el);
+        return () => observer.disconnect();
+    }, [ref]);
 }
 
 const InstagramIcon = () => (
@@ -25,13 +41,14 @@ const FacebookIcon = () => (
 );
 
 const Footer = () => {
-    useNanumFont();
+    const footerRef = useRef<HTMLElement>(null);
+    useLazyNanumFont(footerRef);
     const { lang } = useLanguage();
     const t = translations[lang].footer;
     const nav = translations[lang].nav;
 
     return (
-        <footer className="border-t border-gray-200 pt-20 pb-8 px-4 md:px-8 bg-gray-50" role="contentinfo">
+        <footer ref={footerRef} className="border-t border-gray-200 pt-20 pb-8 px-4 md:px-8 bg-gray-50" role="contentinfo">
             <div className="max-w-350 mx-auto">
 
                 {/* Top section */}

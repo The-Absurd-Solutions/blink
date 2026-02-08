@@ -41,11 +41,6 @@ body {
   line-height: 0.8;
 }
 
-/* Custom handwriting font */
-.font-handwriting {
-  font-family: 'Nanum Pen Script', cursive;
-}
-
 /* Navigation link styling */
 .nav-link {
   position: relative;
