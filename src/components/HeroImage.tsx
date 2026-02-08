@@ -12,8 +12,8 @@ const HeroImage = () => {
             <picture>
                 <source
                     type="image/webp"
-                    srcSet="/hero-672w.webp 672w, /hero-1152w.webp 1152w"
-                    sizes="(max-width: 768px) 500px, (max-width: 1024px) 576px, 672px"
+                    srcSet="/hero-672w.webp 672w, /hero-828w.webp 828w, /hero-1152w.webp 1152w"
+                    sizes="(max-width: 500px) calc(100vw - 2rem), (max-width: 768px) 500px, (max-width: 1024px) 576px, 672px"
                 />
                 <img
                     src="/hero.png"

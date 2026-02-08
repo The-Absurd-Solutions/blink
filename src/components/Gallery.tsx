@@ -39,7 +39,7 @@ const Gallery = () => {
                                 <source
                                     type="image/webp"
                                     srcSet={img.srcSet}
-                                    sizes="(max-width: 768px) 100vw, 50vw"
+                                    sizes="(max-width: 768px) calc(100vw - 2rem), calc(50vw - 3rem)"
                                 />
                                 <img
                                     src={img.src}
