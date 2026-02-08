@@ -6,7 +6,7 @@ const About = () => {
     const t = translations[lang].about;
 
     return (
-        <section id="about" className="py-24 px-4 md:px-8 bg-white" aria-labelledby="about-heading">
+        <section id="about" className="py-24 px-4 md:px-8 bg-gray-50" aria-labelledby="about-heading">
             <div className="max-w-350 mx-auto">
                 {/* Section Header */}
                 <header className="mb-20">
