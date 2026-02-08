@@ -6,7 +6,7 @@
   <!-- Homepage -->
   <url>
     <loc>https://blink.rs/</loc>
-    <lastmod>2026-02-05</lastmod>
+    <lastmod>2026-02-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="sr" href="https://blink.rs/"/>
@@ -22,12 +22,17 @@
       <image:title>Najsavremenija oftalmološka oprema</image:title>
       <image:caption>Najsavremenija oftalmološka oprema Topcon za preciznu dijagnostiku očiju</image:caption>
     </image:image>
+    <image:image>
+      <image:loc>https://blink.rs/ordinacija1.png</image:loc>
+      <image:title>Blink oftalmološka ordinacija Novi Pazar</image:title>
+      <image:caption>Unutrašnjost moderne Blink oftalmološke ordinacije sa dijagnostičkom opremom u Novom Pazaru</image:caption>
+    </image:image>
   </url>
-  
+
   <!-- English version -->
   <url>
     <loc>https://blink.rs/?lang=en</loc>
-    <lastmod>2026-02-05</lastmod>
+    <lastmod>2026-02-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="sr" href="https://blink.rs/"/>
@@ -38,15 +43,36 @@
   <!-- Services section -->
   <url>
     <loc>https://blink.rs/#services</loc>
-    <lastmod>2026-02-05</lastmod>
+    <lastmod>2026-02-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  
+
+  <!-- Gallery section -->
+  <url>
+    <loc>https://blink.rs/#gallery</loc>
+    <lastmod>2026-02-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://blink.rs/ordinacija1.png</image:loc>
+      <image:title>Blink oftalmološka ordinacija — unutrašnjost</image:title>
+      <image:caption>Moderna dijagnostička oprema u Blink oftalmološkoj ordinaciji u Novom Pazaru</image:caption>
+    </image:image>
+  </url>
+
+  <!-- About section -->
+  <url>
+    <loc>https://blink.rs/#about</loc>
+    <lastmod>2026-02-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
   <!-- Technology section -->
   <url>
     <loc>https://blink.rs/#technology</loc>
-    <lastmod>2026-02-05</lastmod>
+    <lastmod>2026-02-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>

@@ -75,18 +75,25 @@ const Technology = () => {
                     <figure className="lg:col-span-7 relative order-1 lg:order-2">
                         <div className="relative">
                             <div className="aspect-4/3 overflow-hidden">
-                                <img
-                                    src="/tehnologija.jpg"
-                                    alt={lang === 'sr'
-                                        ? "Najsavremenija oftalmološka oprema Topcon za preciznu dijagnostiku očiju u Blink ordinaciji Novi Pazar"
-                                        : "State-of-the-art Topcon ophthalmic equipment for precise eye diagnostics at Blink clinic Novi Pazar"}
-                                    width={700}
-                                    height={525}
-                                    loading="lazy"
-                                    decoding="async"
-                                    style={{ contentVisibility: 'auto', containIntrinsicSize: '700px 525px' }}
-                                    className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
-                                />
+                                <picture>
+                                    <source
+                                        type="image/webp"
+                                        srcSet="/tehnologija-480w.webp 480w, /tehnologija.webp 960w"
+                                        sizes="(max-width: 1024px) 100vw, 58vw"
+                                    />
+                                    <img
+                                        src="/tehnologija.jpg"
+                                        alt={lang === 'sr'
+                                            ? "Najsavremenija oftalmološka oprema Topcon za preciznu dijagnostiku očiju u Blink ordinaciji Novi Pazar"
+                                            : "State-of-the-art Topcon ophthalmic equipment for precise eye diagnostics at Blink clinic Novi Pazar"}
+                                        width={700}
+                                        height={525}
+                                        loading="lazy"
+                                        decoding="async"
+                                        style={{ contentVisibility: 'auto', containIntrinsicSize: '700px 525px' }}
+                                        className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
+                                    />
+                                </picture>
                             </div>
                             {/* Subtle accent line */}
                             <div className="absolute -bottom-4 left-0 w-24 h-0.5 bg-(--color-gold)" aria-hidden="true"></div>

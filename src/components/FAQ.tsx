@@ -33,7 +33,7 @@ const FAQ = () => {
                     {t.items.map((item, index) => (
                         <div
                             key={index}
-                            className={`group bg-white rounded-lg p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg ${openIndex === index ? 'ring-1 ring-(--color-gold)' : ''}`}
+                            className={`group bg-white rounded-lg p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg ${openIndex === index ? 'ring-1 ring-(--color-gold)' : ''} ${item.sections ? 'md:col-span-2' : ''}`}
                         >
                             <dt>
                                 <button
@@ -56,12 +56,28 @@ const FAQ = () => {
                             </dt>
                             <dd
                                 id={`faq-answer-${index}`}
-                                className={`overflow-hidden transition-all duration-300 ${openIndex === index ? 'max-h-48 mt-4' : 'max-h-0'}`}
+                                className={`grid transition-all duration-300 ${openIndex === index ? 'grid-rows-[1fr] mt-4' : 'grid-rows-[0fr]'}`}
                                 aria-hidden={openIndex !== index}
                             >
-                                <p className="text-gray-500 text-sm leading-relaxed">
-                                    {item.answer}
-                                </p>
+                                <div className="overflow-hidden">
+                                    <p className="text-gray-500 text-sm leading-relaxed">
+                                        {item.answer}
+                                    </p>
+                                    {item.sections && (
+                                        <div className="mt-4 space-y-4">
+                                            {item.sections.map((section, i) => (
+                                                <div key={i}>
+                                                    <h4 className="text-sm font-semibold text-black mb-1">
+                                                        {section.title}
+                                                    </h4>
+                                                    <p className="text-gray-500 text-sm leading-relaxed">
+                                                        {section.text}
+                                                    </p>
+                                                </div>
+                                            ))}
+                                        </div>
+                                    )}
+                                </div>
                             </dd>
                         </div>
                     ))}

@@ -1,6 +1,5 @@
 import { translations } from '../translations';
 import { useLanguage } from '../context/LanguageContext';
-import Navbar from './Navbar';
 import EyeDot from './EyeDot';
 import HeroImage from './HeroImage';
 import ArtisticAccent from './ArtisticAccent';
@@ -8,17 +7,15 @@ import MouseGlow from './MouseGlow';
 
 interface HeroProps {
     lensEnabled: boolean;
-    setLensEnabled: (enabled: boolean) => void;
 }
 
-const Hero = ({ lensEnabled, setLensEnabled }: HeroProps) => {
+const Hero = ({ lensEnabled }: HeroProps) => {
     const { lang } = useLanguage();
     const t = translations[lang].hero;
 
     return (
         <header className="relative w-full min-h-[85vh] flex flex-col overflow-hidden bg-gray-50" role="banner">
             <MouseGlow isEnabled={lensEnabled} />
-            <Navbar lensEnabled={lensEnabled} setLensEnabled={setLensEnabled} />
 
             <div className="grow flex flex-col relative w-full max-w-400 mx-auto px-4 md:px-8 pt-6 pb-8 justify-center">
 

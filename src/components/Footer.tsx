@@ -56,7 +56,10 @@ const Footer = () => {
                             </h4>
                             <ul className="space-y-4">
                                 <li><a href="#services" className="text-gray-600 hover:text-black transition-colors text-sm">{nav.services}</a></li>
+                                <li><a href="#conditions" className="text-gray-600 hover:text-black transition-colors text-sm">{nav.conditions}</a></li>
                                 <li><a href="#technology" className="text-gray-600 hover:text-black transition-colors text-sm">{nav.tech}</a></li>
+                                <li><a href="#gallery" className="text-gray-600 hover:text-black transition-colors text-sm">{nav.gallery}</a></li>
+                                <li><a href="#about" className="text-gray-600 hover:text-black transition-colors text-sm">{nav.about}</a></li>
                                 <li><a href="#faq" className="text-gray-600 hover:text-black transition-colors text-sm">FAQ</a></li>
                             </ul>
                         </div>

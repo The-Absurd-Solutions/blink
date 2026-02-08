@@ -20,6 +20,8 @@ Disallow: /assets/*.css$
 Allow: /favicon.svg
 Allow: /hero.png
 Allow: /tehnologija.jpg
+Allow: /ordinacija1.png
+Allow: /*.webp$
 Allow: /*.html$
 
 # Google specific

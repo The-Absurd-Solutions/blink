@@ -94,9 +94,21 @@
         },
         "image": [
           "https://blink.rs/hero.png",
-          "https://blink.rs/tehnologija.jpg"
+          "https://blink.rs/tehnologija.jpg",
+          "https://blink.rs/ordinacija1.png"
         ],
         "description": "Oftalmološka ordinacija posvećena očuvanju i unapređenju vašeg vida kroz individualizovan pristup i preciznu dijagnostiku.",
+        "founder": {
+          "@type": "Person",
+          "@id": "https://blink.rs/#doctor",
+          "name": "dr Enisa Memić",
+          "jobTitle": "Specijalizant oftalmologije",
+          "description": "Specijalizant oftalmologije posvećena očuvanju i unapređenju vida uz individualan pristup svakom pacijentu.",
+          "worksFor": {
+            "@id": "https://blink.rs/#organization"
+          },
+          "medicalSpecialty": "Ophthalmology"
+        },
         "telephone": "+38162572222",
         "email": "drmemicenisa@gmail.com",
         "priceRange": "$$",
@@ -289,18 +301,30 @@
           {
             "@type": "ListItem",
             "position": 3,
+            "name": "Prostor",
+            "item": "https://blink.rs/#gallery"
+          },
+          {
+            "@type": "ListItem",
+            "position": 4,
             "name": "Tehnologija",
             "item": "https://blink.rs/#technology"
           },
           {
             "@type": "ListItem",
-            "position": 4,
+            "position": 5,
+            "name": "O nama",
+            "item": "https://blink.rs/#about"
+          },
+          {
+            "@type": "ListItem",
+            "position": 6,
             "name": "FAQ",
             "item": "https://blink.rs/#faq"
           },
           {
             "@type": "ListItem",
-            "position": 5,
+            "position": 7,
             "name": "Kontakt",
             "item": "https://blink.rs/#contact"
           }
@@ -312,34 +336,26 @@
         "mainEntity": [
           {
             "@type": "Question",
-            "name": "Koliko često treba raditi oftalmološki pregled?",
+            "name": "Šta sve obuhvata oftalmološki pregled?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Preporučujemo redovan oftalmološki pregled jednom godišnje. Za osobe sa dijabetesom, glaukomom ili drugim hroničnim stanjima, pregledi mogu biti češći prema preporuci lekara."
+              "text": "Detaljan pregled kod oftalmologa sastoji se iz nekoliko ključnih koraka: Ispitivanje oštrine vida – vid se proverava zasebno za svako oko, kako na daljinu tako i na blizinu, na osnovu čega lekar propisuje dioptriju. Pregled prednjeg segmenta oka – pomoću biomikroskopa lekar pregleda rožnjaču, sočivo, dužicu i okolna tkiva. Merenje očnog pritiska (tonometrija) – aplanacionom ili pneumotonometrijom. Gonioskopija – procena komornog ugla, značajna za otkrivanje glaukoma. Pregled očnog dna – obavlja se oftalmoskopom, za temeljnu procenu neophodno je širenje zenica."
             }
           },
           {
             "@type": "Question",
-            "name": "Da li oftalmološki pregled boli?",
+            "name": "Kada je pregled preporučljiv?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Ne, oftalmološki pregled je potpuno bezbolan. Koristimo najsavremeniju opremu koja omogućava brzu i komfornu dijagnostiku bez ikakvog diskomfora."
+              "text": "Pregled se posebno preporučuje osobama koje prvi put primećuju poteškoće pri čitanju (obično nakon 40. godine), pacijentima sa dijabetesom ili hipertenzijom, kao i onima u čijoj porodici postoji istorija glaukoma."
             }
           },
           {
             "@type": "Question",
-            "name": "Koliko traje oftalmološki pregled?",
+            "name": "Šta treba znati pre pregleda?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Standardni oftalmološki pregled traje između 30 i 45 minuta. Za specijalizovane preglede može biti potrebno dodatno vreme."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Da li je potrebna priprema za oftalmološki pregled?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Za većinu pregleda nije potrebna posebna priprema. Ukoliko planirate širenje zenica, preporučujemo da povedete pratnju jer ćete imati zamućen vid nekoliko sati."
+              "text": "Pregled bez širenja zenica traje približno 30 minuta, dok sa širenjem može potrajati do sat vremena. Za kontaktnu tonometriju i gonioskopiju potrebne su anestetičke kapi. Ukoliko ste alergični na lokalne anestetike ili kapi za širenje zenica, obavezno o tome obavestite lekara pre početka pregleda."
             }
           }
         ]

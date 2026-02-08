@@ -3,10 +3,14 @@ import { Routes, Route, Link } from 'react-router-dom';
 import { LanguageContext } from './context/LanguageContext';
 import { useLanguage } from './context/LanguageContext';
 import ErrorBoundary from './components/ErrorBoundary';
+import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Services from './components/Services';
+import Conditions from './components/Conditions';
 import Technology from './components/Technology';
 import FAQ from './components/FAQ';
+import Gallery from './components/Gallery';
+import About from './components/About';
 import Booking from './components/Booking';
 import Footer from './components/Footer';
 
@@ -77,10 +81,14 @@ function HomePage() {
 
   return (
     <div className="w-full bg-(--color-bg)">
-      <Hero lensEnabled={lensEnabled} setLensEnabled={setLensEnabled} />
+      <Navbar lensEnabled={lensEnabled} setLensEnabled={setLensEnabled} />
+      <Hero lensEnabled={lensEnabled} />
       <main id="main-content">
         <Services />
+        <Gallery />
+        <Conditions />
         <Technology />
+        <About />
         <FAQ />
         <Booking />
       </main>
