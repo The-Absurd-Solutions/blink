@@ -72,7 +72,7 @@ const Navbar = ({ lensEnabled, setLensEnabled }: NavbarProps) => {
             <a href="#services" className="skip-link">
                 {lang === 'sr' ? 'Preskoči na sadržaj' : 'Skip to content'}
             </a>
-            <nav className={`sticky top-0 w-full flex justify-between items-start p-4 md:p-8 z-50 transition-all duration-300 ${scrolled ? 'bg-(--color-bg)/80 backdrop-blur-md' : 'bg-gray-50'}`} role="navigation" aria-label={lang === 'sr' ? 'Glavna navigacija' : 'Main navigation'}>
+            <nav className={`md:sticky md:top-0 w-full flex justify-between items-start p-4 md:p-8 z-50 transition-all duration-300 ${scrolled ? 'bg-(--color-bg)/80 backdrop-blur-md' : 'bg-gray-50'}`} role="navigation" aria-label={lang === 'sr' ? 'Glavna navigacija' : 'Main navigation'}>
                 {/* Left Navigation */}
                 <div className="px-6 py-3 gap-6 items-center text-sm font-medium tracking-wide text-gray-800 hidden md:flex">
                     <a href="#services" className="nav-link hover:text-black transition-colors">{t.services}</a>
