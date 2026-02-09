@@ -151,7 +151,7 @@ const Footer = () => {
                 </div>
 
                 {/* Absurd Solution Credit */}
-                <div className="mt-12 flex justify-end">
+                <div className="mt-12 flex justify-center md:justify-end">
                     <a
                         href="https://absurdsolution.com/"
                         target="_blank"

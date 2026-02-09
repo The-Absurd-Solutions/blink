@@ -6,10 +6,10 @@ const About = () => {
     const t = translations[lang].about;
 
     return (
-        <section id="about" className="py-24 px-4 md:px-8 bg-gray-50" aria-labelledby="about-heading">
+        <section id="about" className="py-18 md:py-24 px-4 md:px-8 bg-gray-50" aria-labelledby="about-heading">
             <div className="max-w-350 mx-auto">
                 {/* Section Header */}
-                <header className="mb-20">
+                <header className="mb-14 md:mb-20">
                     <div className="flex items-center gap-3 mb-4">
                         <div className="w-8 h-px bg-(--color-gold)" aria-hidden="true"></div>
                         <span className="text-xs tracking-[0.3em] text-gray-400 uppercase">
