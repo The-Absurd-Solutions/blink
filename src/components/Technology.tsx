@@ -18,11 +18,11 @@ const Technology = () => {
     }, []);
 
     return (
-        <section id="technology" className="relative py-24 px-4 md:px-8 bg-gray-50" aria-labelledby="technology-heading">
+        <section id="technology" className="relative py-18 md:py-24 px-4 md:px-8 bg-gray-50" aria-labelledby="technology-heading">
             <div className="relative max-w-350 mx-auto">
 
                 {/* Section Header - consistent with Services */}
-                <header className="mb-24">
+                <header className="mb-18 md:mb-24">
                     <div className="flex items-center gap-3 mb-4">
                         <div className="w-8 h-px bg-(--color-gold)" aria-hidden="true"></div>
                         <span className="text-xs tracking-[0.3em] text-gray-400">{t.label}</span>

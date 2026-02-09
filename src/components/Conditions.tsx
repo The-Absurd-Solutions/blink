@@ -6,10 +6,10 @@ const Conditions = () => {
     const t = translations[lang].conditions;
 
     return (
-        <section id="conditions" className="py-24 px-4 md:px-8 bg-gray-50" aria-labelledby="conditions-heading">
+        <section id="conditions" className="py-18 md:py-24 px-4 md:px-8 bg-gray-50" aria-labelledby="conditions-heading">
             <div className="max-w-350 mx-auto">
                 {/* Section Header */}
-                <header className="mb-24 flex flex-col md:flex-row md:items-end md:justify-between gap-8">
+                <header className="mb-18 md:mb-24 flex flex-col md:flex-row md:items-end md:justify-between gap-8">
                     <div>
                         <div className="flex items-center gap-3 mb-4">
                             <div className="w-8 h-px bg-(--color-gold)" aria-hidden="true"></div>
